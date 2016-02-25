@@ -1,0 +1,20 @@
+{
+  "name": "posthtml-exps-test",
+  "version": "0.8.0",
+  "description": "Template Expressions for PostHTML",
+  "engines": {
+    "node": ">=4"
+  },
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "http:/github.com/michael-ciniawsky/posthtml-exps"
+  },
+  "author": {
+    "name": "Michael Ciniawky",
+    "email": "michael.ciniawsky@gmail.com"
+  },
+  "license": "MIT"
+}
