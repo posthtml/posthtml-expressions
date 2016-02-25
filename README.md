@@ -2,7 +2,7 @@
 
 ## Install
 ```bash
-(sudo) npm i -D posthtml-exps
+(sudo) npm i -D posthtml-exp
 ```
 
 ## Options
@@ -28,13 +28,13 @@ If **** options.style **** is unset, the default syntax (JSX) is used.
 ### Locals
 #### Set locals directly as arguments
 ```js
-let exps = require('posthtml-exps')({
+let exps = require('posthtml-exp')({
   locals: {/* locals */}
 })
 ```
 #### Load locals from an external file
 ```js
-let exps = require('posthtml-exps')({
+let exps = require('posthtml-exp')({
   locals: {/* 'path/to/file.(js|json) '*/}
 })
 ```
@@ -45,14 +45,14 @@ exports = module.exports = {/* locals */}
 {
   "name": "PostHTML Exps",
   "repo": {
-    "name": "posthtml-exps",
-    "url": "https://github.com/michael-ciniawsky/posthtml-exps"
+    "name": "posthtml-exp",
+    "url": "https://github.com/michael-ciniawsky/posthtml-exp"
   }
 }
 ```
 
 ## Paths
-Expression and Helper arguments can be expressed with dot notation syntax. The current limit is set to 3.
+Expression and Helper arguments can be expressed with dot notation syntax. The current limit for nesting is set to 3.
 ```js
 {
   local: {
@@ -142,7 +142,7 @@ const fs = require('fs')
 
 const posthtml = require('posthtml')
 
-const exps = require('posthtml-exps')({
+const exp = require('posthtml-exp')({
   locals: {
     id: 'title',
     class: 'header',
@@ -152,7 +152,7 @@ const exps = require('posthtml-exps')({
 
 let file = fs.readFileSync('./index.html', 'utf-8')
 
-posthtml([ exps ])
+posthtml([ exp ])
   .process(file)
   .then(result => console.log(result.html))
 ```
@@ -176,7 +176,7 @@ const fs = require('fs')
 
 const posthtml = require('posthtml')
 
-const exps = require('posthtml-exps')({
+const exp = require('posthtml-exp')({
   style: '{{',
   locals: {
     id: 'title',
@@ -187,7 +187,7 @@ const exps = require('posthtml-exps')({
 
 let file = fs.readFileSync('./index.html', 'utf-8')
 
-posthtml([ exps ])
+posthtml([ exp ])
   .process(file)
   .then(result => console.log(result.html))
 ```

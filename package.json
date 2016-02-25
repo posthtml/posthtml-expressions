@@ -1,5 +1,5 @@
 {
-  "name": "posthtml-exps",
+  "name": "posthtml-exp",
   "version": "0.8.0",
   "description": "Template Expressions for PostHTML",
   "engines": {
@@ -8,13 +8,24 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {},
+  "keywords": [
+    "HTML",
+    "PostHTML",
+    "PostHTML Plugin",
+    "Template",
+    "Expressions"
+  ],
   "author": {
     "name": "Michael Ciniawky",
     "email": "michael.ciniawsky@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "http:/github.com/michael-ciniawsky/posthtml-exprs"
+    "url": "https:/github.com/michael-ciniawsky/posthtml-exp"
   },
+  "bugs": {
+    "url": "https://github.com/michael-ciniawsky/posthtml-exp/issues"
+  },
+  "homepage": "https://github.com/michael-ciniawsky/posthtml-exp#readme",
   "license": "MIT"
 }
