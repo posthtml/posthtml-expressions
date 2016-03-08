@@ -10,17 +10,17 @@
 Choose one of the following expression syntaxes.
 If **** options.style **** is unset, the default syntax (JSX) is used.
 
-##### JSX: *** '{' ***
+##### JSX: **'{'**
 
 ```html
 <div id="{id}" class="{class}">${content}</div>
 ```
-##### HBS:  *** '{{' ***
+##### HBS:  **'{{'**
 
 ```html
 <div id="{{id}}" class="{{class}}">{{content}}</div>
 ```
-##### Blaze:  *** '@' ***
+##### Blaze:  **'@'**
 
 ```html
 <div id="@id" class="@name">@content</div>
@@ -76,7 +76,7 @@ Expression and Helper arguments can be expressed with dot notation syntax. The c
 ```
 
 ## Helpers
-### Each *** {...} ***
+### Each **{...}**
 ```js
 {
   locals: {
@@ -97,7 +97,7 @@ Expression and Helper arguments can be expressed with dot notation syntax. The c
 </ul>
 ```
 
-### Pipe *** { | } ***
+### Pipe **{ | }**
 ```js
 {
   locals: {
@@ -113,7 +113,7 @@ Expression and Helper arguments can be expressed with dot notation syntax. The c
 <h1>PostHTML Expressions</h1>
 ```
 
-### Partial *** {> } ***
+### Partial **{> }**
 ```js
 {
   locals: {
