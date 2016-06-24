@@ -1,19 +1,18 @@
 # Expressions for PostHTML
 
 ## Install
-```bash
-(sudo) npm i -D posthtml-exp
+```sh
+npm i posthtml-exp
 ```
 
 ## Options
 ### Style
-Choose one of the following expression syntaxes.
-If **** options.style **** is unset, the default syntax (JSX) is used.
+Choose one of the following expression syntaxes. If **options.style** is unset, the default syntax (JSX) is used.
 
 ##### JSX: **'{'**
 
 ```html
-<div id="{id}" class="{class}">${content}</div>
+<div id="{id}" class="{class}">{content}</div>
 ```
 ##### HBS:  **'{{'**
 
@@ -25,6 +24,15 @@ If **** options.style **** is unset, the default syntax (JSX) is used.
 ```html
 <div id="@id" class="@name">@content</div>
 ```
+
+For example, to change to handlebars-style delimiters:
+
+```js
+let exps = require('posthtml-exp')({
+  style: '{{'
+})
+```
+
 ### Locals
 #### Set locals directly as arguments
 ```js
