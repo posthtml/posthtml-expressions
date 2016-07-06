@@ -9,13 +9,13 @@ module.exports = {
     middlename: 'HTML',
     lastname: 'Exps'
   },
-  text: './includes/text.txt',
-  button: './includes/button.html',
-  includes: {
-    text: './includes/text.txt',
-    button: './includes/button.html',
+  text: './imports/text.txt',
+  button: './imports/button.html',
+  imports: {
+    text: './imports/text.txt',
+    button: './imports/button.html',
     include: {
-      button: './includes/button.html'
+      button: './imports/button.html'
     }
   },
   items: [{name: 'Hans', age: 65}, 'Two', 'Three'],
@@ -36,7 +36,7 @@ module.exports = {
       text: 'Hello World!',
       chapter: {
         title: '<h1>Chapter Title</h1>\n',
-        text: '<p>./includes/text.txt</p>'
+        text: '<p>./imports/text.txt</p>'
       }
     }
   }

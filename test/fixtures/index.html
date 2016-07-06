@@ -7,39 +7,39 @@
 </head>
 
 <body>
-  <h1>{firstname} {middlename} {lastname}</h1>
-  <h1>My name is {firstname} {middlename} {lastname}</h1>
-  <h1>My name is {fullname.firstname} {fullname.lastname}</h1>
+  <h1>{{firstname}} {{middlename}} {{lastname}}</h1>
+  <h1>My name is {{firstname}} {{middlename}} {{lastname}}</h1>
+  <h1>My name is {{fullname.firstname}} {{fullname.lastname}}</h1>
 
-  <div>{? firstname : lastname}</div>
+  <div>{{? firstname : lastname}}</div>
 
 
-  <div>{article.content|title|text}</div>
-  <div>{article.content.chapter|title|text}</div>
+  <div>{{article.content|title|text}}</div>
+  <div>{{article.content.chapter|title|text}}</div>
 
-  <div>{> button}</div>
-  <div>TEXT: {> button}</div>
-  <div>HTML: {> button}</div>
+  <div>{{> button}}</div>
+  <div>TEXT: {{> button}}</div>
+  <div>HTML: {{> button}}</div>
 
-  <div>Nested TEXT: {> includes.button}</div>
-  <div>Nested HTML: {> includes.button}</div>
+  <div>Nested TEXT: {{> imports.button}}</div>
+  <div>Nested HTML: {{> imports.button}}</div>
 
 
   <article>
-    <h1>{article.title}</h1>
-    <h2>{article.content.title}</h2>
+    <h1>{{article.title}}</h1>
+    <h2>{{article.content.title}}</h2>
   </article>
 
   <ul>
-    <li>{...items}</li>
+    <li>{{...items}}</li>
   </ul>
 
   <ul>
-    <li>{...list.items}</li>
+    <li>{{...list.items}}</li>
   </ul>
 
   <ul>
-    <li>{...note.list.items}</li>
+    <li>{{...note.list.items}}</li>
   </ul>
 </body>
 

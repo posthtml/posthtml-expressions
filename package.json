@@ -2,7 +2,10 @@
   "name": "posthtml-exp",
   "version": "0.8.1",
   "description": "Expressions for PostHTML",
-  "engines": {"npm": ">=3", "node": ">=4"},
+  "engines": {
+    "npm": ">=3",
+    "node": ">=4"
+  },
   "main": "index.js",
   "scripts": {
     "clean": "echo '=> Cleaning' && sudo rm -rf .nyc_output coverage",
@@ -15,11 +18,20 @@
   },
   "nyc": {
     "all": true,
-    "include": ["lib","test"],
-    "extension": [".js"]
+    "include": [
+      "lib",
+      "test"
+    ],
+    "extension": [
+      ".js"
+    ]
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "nyc": "^6.6.1",
+    "standard": "^7.1.2"
+  },
   "keywords": [
     "html",
     "posthtml",
@@ -32,11 +44,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/michael-ciniawsky/posthtml-exp"
+    "url": "https://github.com/posthtml/posthtml-exp"
   },
   "bugs": {
-    "url": "https://github.com/michael-ciniawsky/posthtml-exp/issues"
+    "url": "https://github.com/posthtml/posthtml-exp/issues"
   },
-  "homepage": "https://github.com/michael-ciniawsky/posthtml-exp#readme",
+  "homepage": "https://github.com/posthtml/posthtml-exp#readme",
   "license": "MIT"
 }
