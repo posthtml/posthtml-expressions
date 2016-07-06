@@ -149,9 +149,9 @@ Anything in the `condition` attribute is evaluated directly as an expression.
 It should be noted that this is slightly cleaner-looking if you are using the [SugarML parser](https://github.com/posthtml/sugarml). But then again so is every other part of html.
 
 ```sml
-if(condition="'foo' === 'bar'")
+if(condition="foo === 'bar'")
   p Foo really is bar! Revolutionary!
-elseif(condition="'foo' === 'wow'")
+elseif(condition="foo === 'wow'")
   p Foo is wow, oh man.
 else
   p Foo is probably just foo in the end.
