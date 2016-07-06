@@ -1,0 +1,9 @@
+{
+  "id": "title",
+  "class": "section",
+  "content": "Content",
+  "article": {
+    "title": "Article",
+    "subtext": "Write about anything"
+  }
+}
