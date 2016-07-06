@@ -1,20 +1,11 @@
-// ------------------------------------
-// #POSTHTML - EXP
-// ------------------------------------
-
-'use strict'
-
-let get = require('./lib/get')
-let locals = require('./lib/local')
-
-let attrs = require('./lib/attrs')
-let exps = require('./lib/exps')
-let pipe = require('./lib/pipe')
-let each = require('./lib/each')
-let partial = require('./lib/import')
-
-
 module.exports = function (options = {}) {
+
+const attrs = require('./lib/attrs')
+const exps = require('./lib/exps')
+const pipe = require('./lib/pipe')
+const each = require('./lib/each')
+const partial = require('./lib/part')
+
   if (typeof options.locals === 'string') {
     options.locals = require(options.locals)
   }

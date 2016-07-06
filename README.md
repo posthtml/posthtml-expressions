@@ -17,6 +17,7 @@ npm i -D posthtml-exp
 
 <h2 align="center">Usage</h2>
 
+
 ```html
 <div id="{{id}}" class="{{class}}">{{content}}</div>
 ```
