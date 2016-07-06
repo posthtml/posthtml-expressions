@@ -1,5 +1,5 @@
 // ------------------------------------
-// #POSTHTML - EXPS
+// #POSTHTML - EXP
 // ------------------------------------
 
 'use strict'
@@ -11,17 +11,17 @@ let attrs = require('./lib/attrs')
 let exps = require('./lib/exps')
 let pipe = require('./lib/pipe')
 let each = require('./lib/each')
-let partial = require('./lib/part')
+let partial = require('./lib/import')
 // let condition = require('./lib/if')
 
-exports = module.exports = function (options) {
+module.exports = function (options) {
   options = options || {}
 
   if (typeof options.locals === 'string') {
     options.locals = require(options.locals)
   }
 
-  let style = options.style || '{'
+  let style = options.style || '{{'
   let local = options.locals || {}
 
   return function PostHTMLExps (tree) {
@@ -35,7 +35,6 @@ exports = module.exports = function (options) {
         exp = attributes[attr]
 
         if (exp.includes(style)) {
-
           if (!exp.includes('.')) {
             node.attrs[attr] = attrs(local, style, exp)
           }
@@ -44,7 +43,6 @@ exports = module.exports = function (options) {
             node.attrs[attr] = attrs(local, style, exp)
           }
         }
-
       })
 
       if (content.length === 1) {

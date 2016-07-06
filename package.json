@@ -1,19 +1,30 @@
 {
   "name": "posthtml-exp",
   "version": "0.8.1",
-  "description": "Template Expressions for PostHTML",
-  "engines": {
-    "node": ">=4"
-  },
+  "description": "Expressions for PostHTML",
+  "engines": {"npm": ">=3", "node": ">=4"},
   "main": "index.js",
+  "scripts": {
+    "clean": "echo '=> Cleaning' && sudo rm -rf .nyc_output coverage",
+    "pretest": "echo '=> Linting' && standard",
+    "test": "echo '=> Testing' && npm run clean && nyc ava 'test/index.js'",
+    "start": "echo '=> Starting' && sudo npm test"
+  },
+  "ava": {
+    "verbose": "true"
+  },
+  "nyc": {
+    "all": true,
+    "include": ["lib","test"],
+    "extension": [".js"]
+  },
   "dependencies": {},
   "devDependencies": {},
   "keywords": [
-    "HTML",
-    "PostHTML",
-    "PostHTML Plugin",
-    "Template",
-    "Expressions"
+    "html",
+    "posthtml",
+    "posthtmlplugin",
+    "expressions"
   ],
   "author": {
     "name": "Michael Ciniawky",
@@ -21,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https:/github.com/michael-ciniawsky/posthtml-exp"
+    "url": "https://github.com/michael-ciniawsky/posthtml-exp"
   },
   "bugs": {
     "url": "https://github.com/michael-ciniawsky/posthtml-exp/issues"
