@@ -12,11 +12,9 @@ let exps = require('./lib/exps')
 let pipe = require('./lib/pipe')
 let each = require('./lib/each')
 let partial = require('./lib/import')
-// let condition = require('./lib/if')
 
-module.exports = function (options) {
-  options = options || {}
 
+module.exports = function (options = {}) {
   if (typeof options.locals === 'string') {
     options.locals = require(options.locals)
   }
@@ -26,8 +24,8 @@ module.exports = function (options) {
 
   return function PostHTMLExps (tree) {
     tree.walk((node) => {
-      let attributes = node.attrs || {}
-      let content = node.content || []
+      const attributes = node.attrs || {}
+      const content = node.content || []
 
       let exp
 
@@ -47,13 +45,10 @@ module.exports = function (options) {
 
       if (content.length === 1) {
         if (typeof content[0] === 'string') {
-
           exp = content[0].trim()
 
           if (content[0].includes(exp)) {
-
             if (!exp.includes('.')) {
-
               if (exp.includes(`${style}`) ||
                   exp.includes(` ${style}`) &&
                  !exp.includes(`>`) &&
@@ -82,13 +77,11 @@ module.exports = function (options) {
             }
 
             if (exp.includes('.')) {
-
               if (exp.includes(`${style}`) &&
                 !exp.includes(`|`) &&
                 !exp.includes(`>`) &&
                 !exp.includes(`...`)
               ) {
-
                 node.content = exps(local, style, exp, node.content[0])
               }
 
