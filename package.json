@@ -3,7 +3,7 @@
   "version": "0.8.1",
   "description": "Template Expressions for PostHTML",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "main": "index.js",
   "dependencies": {},
