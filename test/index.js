@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // ------------------------------------
 // #POSTHTML - EXP - TEST
 // ------------------------------------
@@ -17,20 +16,10 @@ const posthtml = require('posthtml')
 const plugin = require('..')
 
 test('', (t) => {
-  posthtml([ plugin() ])
+  posthtml([ plugin({ style: '{{', locals: './test/locals.js' }) ])
     .process(fixtures('index.html'))
     .then((result) => {
       console.log(result.html)
-      t.is(expected('index.html'), result.html)
+      // t.is(expected('index.html'), result.html)
     })
 })
-=======
-const fs = require('fs')
-const posthtml = require('posthtml')
-const exps = require('../index')
-const html = fs.readFileSync('./index.html', 'utf8')
-
-posthtml([ exps({ style: '{', locals: './test/locals.js' }) ])
-  .process(html)
-  .then(result => console.log(result.html))
->>>>>>> origin/master
