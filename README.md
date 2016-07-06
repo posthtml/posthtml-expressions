@@ -1,64 +1,50 @@
-# Expressions for PostHTML
+[![NPM][npm]][npm-url]
+[![Deps][deps]][deps-url]
+[![Tests][travis]][travis-url]
+[![Coverage][cover]][cover-url]
+[![Standard Code Style][style]][style-url]
 
-## Install
+<div align="center">
+  <img width="220" height="150" title="PostHTML" src="http://posthtml.github.io/posthtml/logo.svg">
+  <h1>Expressions Plugin</h1>
+</div>
+
+<h2 align="center">Install</h2>
+
 ```bash
-(sudo) npm i -D posthtml-exp
+npm i -D posthtml-exp
 ```
 
-## Options
-### Style
-Choose one of the following expression syntaxes.
-If **** options.style **** is unset, the default syntax (JSX) is used.
-
-##### JSX: **'{'**
-
-```html
-<div id="{id}" class="{class}">${content}</div>
-```
-##### HBS:  **'{{'**
+<h2 align="center">Usage</h2>
 
 ```html
 <div id="{{id}}" class="{{class}}">{{content}}</div>
 ```
-##### Blaze:  **'@'**
 
-```html
-<div id="@id" class="@name">@content</div>
-```
 ### Locals
-#### Set locals directly as arguments
+
 ```js
-let exps = require('posthtml-exp')({
-  locals: {/* locals */}
+const exp = require('posthtml-exp')({
+  locals: {}
 })
-```
-#### Load locals from an external file
-```js
-let exps = require('posthtml-exp')({
-  locals: {/* 'path/to/file.(js|json) '*/}
-})
-```
-```js
-exports = module.exports = {/* locals */}
-```
-```json
-{
-  "name": "PostHTML Exps",
-  "repo": {
-    "name": "posthtml-exp",
-    "url": "https://github.com/michael-ciniawsky/posthtml-exp"
-  }
-}
 ```
 
-## Paths
-Expression and Helper arguments can be expressed with dot notation syntax. The current limit for nesting is set to 3.
+```js
+const exp = require('posthtml-exp')({
+  locals: 'path/to/file.(js|json)'
+})
+```
+
+### Paths
+
+Expression and Helper arguments can be at least nested 3 levels deep.
+
 ```js
 {
-  local: {
-    key1: {
-      key2: {
-        key3: 'PostHtML Expressions'
+  obj: {
+    1: {
+      2: {
+        3: 'PostHTML Expressions'
       }
     }
   }
@@ -66,17 +52,17 @@ Expression and Helper arguments can be expressed with dot notation syntax. The c
 ```
 ```html
 <div>
-  <h2>{local.one.two.tree}</h2>
+  {{obj.1.2.3}}
 </div>
 ```
 ```html
 <div>
-  <h2>PostHTML Expressions</h2>
+  PostHTML Expressions
 </div>
 ```
 
-## Helpers
-### Each **{...}**
+### Helpers
+#### Each **{...}**
 ```js
 {
   locals: {
@@ -97,7 +83,8 @@ Expression and Helper arguments can be expressed with dot notation syntax. The c
 </ul>
 ```
 
-### Pipe **{ | }**
+#### Pipe **{ | }**
+
 ```js
 {
   locals: {
@@ -107,22 +94,24 @@ Expression and Helper arguments can be expressed with dot notation syntax. The c
 }
 ```
 ```html
-<h1>{locals|firstname|lastname}</h1>
+<h1>{firstname | lastname}</h1>
 ```
 ```html
 <h1>PostHTML Expressions</h1>
 ```
 
-### Partial **{> }**
+#### Import **{> }**
 ```js
 {
   locals: {
-    button: './includes/button.html'
+    button: './button.html'
   }
 }
 ```
 ```html
-<div>{> button}</div>
+<div>
+  {> button}
+</div>
 ```
 ```html
 <div>
@@ -130,15 +119,12 @@ Expression and Helper arguments can be expressed with dot notation syntax. The c
 </div>
 ```
 
-## Usage
-For general usage and build process integration see [PostHTML Docs](https://github.com/posthtml/posthtml#usage)
+<h2 align="center">Example</h2>
 
-### Example using Node API
-#### Default
 ```js
 'use strict'
 
-const fs = require('fs')
+const { readFileSync } = require('fs')
 
 const posthtml = require('posthtml')
 
@@ -146,60 +132,68 @@ const exp = require('posthtml-exp')({
   locals: {
     id: 'title',
     class: 'header',
-    content: 'PostHTML Exps Default'
+    content: 'PostHTML Expressions'
   }
 })
 
-let file = fs.readFileSync('./index.html', 'utf-8')
+const html = readFileSync('./index.html', 'utf8')
 
 posthtml([ exp ])
   .process(file)
   .then(result => console.log(result.html))
 ```
-##### Input
-```html
-<div class={class}>
-  <h1 id={id}>{content}</h1>
-</div>
-```
-##### Output
-```html
-<div class="header">
-   <h1 id="title">PostHTML Exps</h1>
-</div>
-```
-#### Custom
-```js
-'use strict'
 
-const fs = require('fs')
+###### Input
 
-const posthtml = require('posthtml')
-
-const exp = require('posthtml-exp')({
-  style: '{{',
-  locals: {
-    id: 'title',
-    class: 'header',
-    content: 'PostHTML Exps Default'
-  }
-})
-
-let file = fs.readFileSync('./index.html', 'utf-8')
-
-posthtml([ exp ])
-  .process(file)
-  .then(result => console.log(result.html))
-```
-##### Input
 ```html
 <div class={{class}}>
   <h1 id={{id}}>{{content}}</h1>
 </div>
 ```
-##### Output
+
+###### Output
+
 ```html
 <div class="header">
-   <h1 id="title">PostHTML Exps Custom</h1>
+   <h1 id="title">PostHTML Expressions</h1>
 </div>
 ```
+
+<h2 align="center">LICENSE</h2>
+
+> MIT License (MIT)
+
+> Copyright (c) 2016 PostHTML Michael Ciniawsky <michael.ciniawsky@gmail.com>
+
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+> The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[npm]: https://img.shields.io/npm/v/posthtml-exp.svg
+[npm-url]: https://npmjs.com/package/posthtml-exp
+
+[deps]: https://david-dm.org/posthtml/posthtml-exp.svg
+[deps-url]: https://david-dm.org/posthtml/posthtml-exp
+
+[style]: https://img.shields.io/badge/code%20style-standard-yellow.svg
+[style-url]: http://standardjs.com/
+
+[travis]: http://img.shields.io/travis/posthtml/posthtml-exp.svg
+[travis-url]: https://travis-ci.org/posthtml/posthtml-exp
+
+[cover]: https://coveralls.io/repos/github/posthtml/posthtml-exp/badge.svg?branch=master
+[cover-url]: https://coveralls.io/github/posthtml/posthtml-exp?branch=master
