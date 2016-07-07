@@ -19,6 +19,10 @@ test('unescaped', (t) => {
   })
 })
 
+test('expression spacing', (t) => {
+  return matchExpected(t, 'expression_spacing', { locals: { foo: 'X' } })
+})
+
 function matchExpected (t, name, config, log = false) {
   const html = readFileSync(path.join(fixtures, `${name}.html`), 'utf8')
   const expected = readFileSync(path.join(fixtures, `${name}.expected.html`), 'utf8')
