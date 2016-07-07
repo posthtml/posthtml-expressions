@@ -1,25 +1,19 @@
-// ------------------------------------
-// #POSTHTML - EXP - TEST
-// ------------------------------------
-
-'use strict'
-
 const test = require('ava')
-
-const { join } = require('path')
-const { readFileSync } = require('fs')
-
-const fixtures = (file) => readFileSync(join(__dirname, 'fixtures', file), 'utf8')
-const expected = (file) => readFileSync(join(__dirname, 'expected', file), 'utf8')
-
+const path = require('path')
 const posthtml = require('posthtml')
-const plugin = require('..')
+const exp = require('../lib')
+const {readFileSync} = require('fs')
+const fixtures = path.join(__dirname, 'fixtures')
 
-test('', (t) => {
-  posthtml([ plugin({ style: '{{', locals: './test/locals.js' }) ])
-    .process(fixtures('index.html'))
-    .then((result) => {
-      console.log(result.html)
-      // t.is(expected('index.html'), result.html)
-    })
+test('basic', (t) => {
+  return matchExpected(t, 'basic', { locals: { test: 'wow' } })
 })
+
+function matchExpected (t, name, config) {
+  const html = readFileSync(path.join(fixtures, `${name}.html`), 'utf8')
+  const expected = readFileSync(path.join(fixtures, `${name}.expected.html`), 'utf8')
+
+  return posthtml([exp(config)])
+    .process(html)
+    .then((res) => { t.truthy(res.html === expected) })
+}
