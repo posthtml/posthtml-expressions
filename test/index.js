@@ -23,6 +23,14 @@ test('expression spacing', (t) => {
   return matchExpected(t, 'expression_spacing', { locals: { foo: 'X' } })
 })
 
+test('conditional', (t) => {
+  return matchExpected(t, 'conditional', { locals: { foo: 'bar' } })
+})
+
+//
+// Utility
+//
+
 function matchExpected (t, name, config, log = false) {
   const html = readFileSync(path.join(fixtures, `${name}.html`), 'utf8')
   const expected = readFileSync(path.join(fixtures, `${name}.expected.html`), 'utf8')
@@ -30,5 +38,5 @@ function matchExpected (t, name, config, log = false) {
   return posthtml([exp(config)])
     .process(html)
     .then((res) => { log && console.log(res.html); return res })
-    .then((res) => { t.truthy(res.html === expected) })
+    .then((res) => { t.truthy(res.html.trim() === expected.trim()) })
 }
