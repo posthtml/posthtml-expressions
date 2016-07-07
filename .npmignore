@@ -1,11 +1,5 @@
-# FILES
-
 .editorconfig
 npm-debug.log
-
 test.js
-
-# DIRECTORIES
-
 test
 node_modules

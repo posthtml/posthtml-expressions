@@ -1,9 +1,4 @@
-# OS
-
 ._*
 .DS_Store
-
-# NODEJS
-
 node_modules
 npm-debug.log
