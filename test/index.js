@@ -13,6 +13,12 @@ test('escaped html', (t) => {
   return matchExpected(t, 'escape_html', { locals: { lt: '<', gt: '>' } })
 })
 
+test('unescaped', (t) => {
+  return matchExpected(t, 'unescaped', {
+    locals: { el: '<strong>wow</strong>' }
+  })
+})
+
 function matchExpected (t, name, config, log = false) {
   const html = readFileSync(path.join(fixtures, `${name}.html`), 'utf8')
   const expected = readFileSync(path.join(fixtures, `${name}.expected.html`), 'utf8')
