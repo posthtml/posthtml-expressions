@@ -33,8 +33,18 @@ test('conditional - only "if" condition', (t) => {
   return matchExpected(t, 'conditional_if', { locals: { foo: 'bar' } })
 })
 
-test.todo('conditional - "if" tag missing condition')
-test.todo('conditional - "elseif" tag missing condition')
+test('conditional - "if" tag missing condition', (t) => {
+  return expectError('conditional_if_error', (err) => {
+    t.truthy(err.toString() === 'Error: the "if" tag must have a "condition" attribute')
+  })
+})
+
+test('conditional - "elseif" tag missing condition', (t) => {
+  return expectError('conditional_elseif_error', (err) => {
+    t.truthy(err.toString() === 'Error: the "elseif" tag must have a "condition" attribute')
+  })
+})
+
 test.todo('conditional - other tag in middle of statement')
 test.todo('conditional - nested conditionals')
 test.todo('conditional - expression error')
@@ -51,4 +61,12 @@ function matchExpected (t, name, config, log = false) {
     .process(html)
     .then((res) => { log && console.log(res.html); return res })
     .then((res) => { t.truthy(res.html.trim() === expected.trim()) })
+}
+
+function expectError (name, cb) {
+  const html = readFileSync(path.join(fixtures, `${name}.html`), 'utf8')
+
+  return posthtml([exp()])
+    .process(html)
+    .catch(cb)
 }
