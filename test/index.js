@@ -23,9 +23,21 @@ test('expression spacing', (t) => {
   return matchExpected(t, 'expression_spacing', { locals: { foo: 'X' } })
 })
 
+test.todo('expression error')
+
 test('conditional', (t) => {
   return matchExpected(t, 'conditional', { locals: { foo: 'bar' } })
 })
+
+test('conditional - only "if" condition', (t) => {
+  return matchExpected(t, 'conditional_if', { locals: { foo: 'bar' } })
+})
+
+test.todo('conditional - "if" tag missing condition')
+test.todo('conditional - "elseif" tag missing condition')
+test.todo('conditional - other tag in middle of statement')
+test.todo('conditional - nested conditionals')
+test.todo('conditional - expression error')
 
 //
 // Utility
