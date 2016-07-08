@@ -33,6 +33,10 @@ test('conditional - only "if" condition', (t) => {
   return matchExpected(t, 'conditional_if', { locals: { foo: 'bar' } })
 })
 
+test('conditional - no render', (t) => {
+  return matchExpected(t, 'conditional_norender', {})
+})
+
 test('conditional - "if" tag missing condition', (t) => {
   return expectError('conditional_if_error', (err) => {
     t.truthy(err.toString() === 'Error: the "if" tag must have a "condition" attribute')
@@ -45,8 +49,14 @@ test('conditional - "elseif" tag missing condition', (t) => {
   })
 })
 
-test.todo('conditional - other tag in middle of statement')
-test.todo('conditional - nested conditionals')
+test('conditional - other tag in middle of statement', (t) => {
+  return matchExpected(t, 'conditional_tag_break', {})
+})
+
+test('conditional - nested conditionals', (t) => {
+  return matchExpected(t, 'conditional_nested', {})
+})
+
 test.todo('conditional - expression error')
 
 //
