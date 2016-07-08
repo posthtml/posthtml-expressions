@@ -23,7 +23,11 @@ test('expression spacing', (t) => {
   return matchExpected(t, 'expression_spacing', { locals: { foo: 'X' } })
 })
 
-test.todo('expression error')
+test('expression error', (t) => {
+  return expectError('expression_error', (err) => {
+    t.truthy(err.toString() === 'SyntaxError: Unexpected token ILLEGAL')
+  })
+})
 
 test('conditional', (t) => {
   return matchExpected(t, 'conditional', { locals: { foo: 'bar' } })
@@ -57,7 +61,11 @@ test('conditional - nested conditionals', (t) => {
   return matchExpected(t, 'conditional_nested', {})
 })
 
-test.todo('conditional - expression error')
+test('conditional - expression error', (t) => {
+  return expectError('conditional_expression_error', (err) => {
+    t.truthy(err.toString() === 'SyntaxError: Unexpected token ILLEGAL')
+  })
+})
 
 //
 // Utility
