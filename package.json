@@ -2,7 +2,9 @@
   "name": "posthtml-exp",
   "version": "0.8.1",
   "description": "Expressions for PostHTML",
-  "engines": {"node": ">=6"},
+  "engines": {
+    "node": ">=6"
+  },
   "main": "index.js",
   "scripts": {
     "clean": "echo '=> Cleaning' && sudo rm -rf .nyc_output coverage",
@@ -26,7 +28,7 @@
   "dependencies": {},
   "devDependencies": {
     "ava": "^0.15.2",
-    "nyc": "^6.6.1",
+    "nyc": "^7.0.0",
     "standard": "^7.1.2"
   },
   "keywords": [
