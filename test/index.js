@@ -72,12 +72,28 @@ test('loop', (t) => {
 })
 
 test('loop object', (t) => {
-  return matchExpected(t, 'loop_object', { locals: { items: { a: 'b', c: 'd' } } })
+  return matchExpected(t, 'loop_object', {
+    locals: { items: { a: 'b', c: 'd' } }
+  })
 })
 
-test.todo('loop with other locals included')
-test.todo('loop with conflicting locals')
-test.todo('nested loops')
+test('loop with other locals included', (t) => {
+  return matchExpected(t, 'loop_locals', {
+    locals: { items: [1, 2, 3], foo: 'bar' }
+  })
+})
+
+test('loop with conflicting locals', (t) => {
+  return matchExpected(t, 'loop_conflict', {
+    locals: { items: [1, 2, 3], item: 'bar' }
+  })
+})
+
+test('nested loops', (t) => {
+  return matchExpected(t, 'loop_nested', {
+    locals: { items: { c1: [1, 2, 3], c2: [4, 5, 6] } }
+  })
+})
 
 //
 // Utility
