@@ -3,3 +3,4 @@ npm-debug.log
 test.js
 test
 node_modules
+.nyc_output

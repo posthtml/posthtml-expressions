@@ -9,9 +9,17 @@
   "bugs": {
     "url": "https://github.com/posthtml/posthtml-exp/issues"
   },
+  "dependencies": {
+    "lodash.clonedeep": "^4.3.2",
+    "lodash.merge": "^4.4.0"
+  },
   "devDependencies": {
     "ava": "^0.15.2",
-    "posthtml": "^0.9.0"
+    "coveralls": "^2.11.9",
+    "nyc": "^7.0.0",
+    "posthtml": "^0.9.0",
+    "snazzy": "^4.0.0",
+    "standard": "^7.1.2"
   },
   "engines": {
     "node": ">=6"
@@ -23,16 +31,14 @@
     "posthtmlplugin"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib",
   "repository": {
     "type": "git",
     "url": "https:/github.com/posthtml/posthtml-exp"
   },
   "scripts": {
-    "test": "ava"
-  },
-  "dependencies": {
-    "lodash.clonedeep": "^4.3.2",
-    "lodash.merge": "^4.4.0"
+    "test": "ava",
+    "coverage": "nyc --reporter=html ava && open coverage/index.html",
+    "coveralls": "nyc --reporter=lcov ava && cat ./coverage/lcov.info | coveralls"
   }
 }
