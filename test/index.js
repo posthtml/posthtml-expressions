@@ -71,6 +71,10 @@ test('loop', (t) => {
   return matchExpected(t, 'loop', { locals: { items: [1, 2, 3] } })
 })
 
+test('loop object', (t) => {
+  return matchExpected(t, 'loop_object', { locals: { items: { a: 'b', c: 'd' } } })
+})
+
 //
 // Utility
 //
