@@ -1,0 +1,8 @@
+<p>x</p>
+<each loop='item_category, key in items'>
+  <p>{{ key }}: {{ JSON.stringify(item_category) }}</p>
+  <each loop='item in item_category'>
+    <p>{{ item }}</p>
+  </each>
+</each>
+<p>x</p>

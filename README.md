@@ -1,33 +1,28 @@
+# PostHTML Expressions <img align="right" width="220" height="200" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
+
 [![NPM][npm]][npm-url]
 [![Deps][deps]][deps-url]
 [![Tests][travis]][travis-url]
 [![Coverage][cover]][cover-url]
 [![Standard Code Style][style]][style-url]
 
-<div align="center">
-  <img width="220" height="150" title="PostHTML" src="http://posthtml.github.io/posthtml/logo.svg">
-  <h1>Expressions Plugin</h1>
-  <p>Local variables, expressions, loops, conditionals and unicorns 👍</p>
-</div>
+Local variables, expressions, loops, and conditionals in your html.
 
-<h2 align="center">Install</h2>
+## Installation
 
-```bash
-npm i -D posthtml-exp
-```
-
-<h2 align="center">Usage</h2>
+First, install from npm with `npm i posthtml-exp --save`, then add it as a plugin to your posthtml pipeline:
 
 ```js
-const { readFileSync } = require('fs')
-
 const posthtml = require('posthtml')
 const exp = require('posthtml-exp')
+const {readFileSync} = require('fs')
 
 posthtml(exp({ locals: { foo: 'bar' } }))
-  .process(readFileSync('index.html', 'utf8'))
-  .then((result) => console.log(result.html))
+  .process(readFileSync('exampleFile.html', 'utf8'))
+  .then(console.log)
 ```
+
+## Usage
 
 This plugin provides a syntax for including local variables and expressions in your templates, and also extends custom tags to act as helpers for conditionals and looping.
 
@@ -47,22 +42,22 @@ You can inject locals into any piece of content in your html templates, other th
 
 ```js
 exp({
-  locals: { class: 'intro', name: 'Jeff' }
+  locals: { myClassName: 'introduction', myName: 'Jeff' }
 })
 ```
 
 And compiled with the following template:
 
 ```html
-<div class="{{class}}">
-  My name is {{name}}
+<div class="{{ myClassName }}">
+  My name is {{ myName }}
 </div>
 ```
 
 You would get this as your output:
 
 ```html
-<div class="intro">
+<div class="introduction">
   My name is Jeff
 </div>
 ```
@@ -73,14 +68,14 @@ By default, special characters will be escaped so that they show up as text, rat
 
 ```js
 exp({
-  locals: { statement: '<strong>wow!</strong>' }
+  locals: { strongStatement: '<strong>wow!</strong>' }
 })
 ```
 
 And you rendered it into a tag like this:
 
 ```html
-<p>The fox said, {{ statement }}</p>
+<p>The fox said, {{ strongStatement }}</p>
 ```
 
 You would see the following output:
@@ -92,8 +87,7 @@ You would see the following output:
 In your browser, you would see the angle brackets, and it would appear as intended. However, if you wanted it instead to be parsed as html, you would need to use the `unescapeDelimiters`, which by default are three curly brackets, like this:
 
 ```html
-<p>The fox said, {{{ statement }}}</p>
-
+<p>The fox said, {{{ strongStatement }}}</p>
 ```
 
 In this case, your code would render as html:
@@ -111,7 +105,6 @@ You are not limited to just directly rendering local variables either, you can i
 ```
 
 With this in mind, it is strongly recommended to limit the number and complexity of expressions that are run directly in your template. You can always move the logic back to your config file and provide a function to the locals object for a smoother and easier result. For example:
-
 
 ```js
 exp({
@@ -159,7 +152,7 @@ Your result would be only this:
 
 Anything in the `condition` attribute is evaluated directly as an expression.
 
-It should be noted that this is slightly cleaner-looking if you are using the [SugarML](https://github.com/posthtml/sugarml). But then again so is every other part of html.
+It should be noted that this is slightly cleaner-looking if you are using the [SugarML parser](https://github.com/posthtml/sugarml). But then again so is every other part of html.
 
 ```sml
 if(condition="foo === 'bar'")
@@ -177,8 +170,8 @@ You can use the `each` tag to build loops. It works with both arrays and objects
 ```js
 exp({
   locals: {
-    array: ['foo', 'bar'],
-    object: { foo: 'bar' }
+    anArray: ['foo', 'bar'],
+    anObject: { foo: 'bar' }
   }
 })
 ```
@@ -199,7 +192,7 @@ Output:
 And an example using an object:
 
 ```html
-<each loop="key, value in anObject">
+<each loop="value, key in anObject">
   <p>{{ key }}: {{ value }}</p>
 </each>
 ```
@@ -222,57 +215,10 @@ So this would also be fine:
 
 So you don't need to declare all the available variables (in this case, the index is skipped), and the expression after `in` doesn't need to be a local variable, it can be any expression.
 
-<h2 align="center">Example</h2>
+### License & Contributing
 
-```js
-const { readFileSync } = require('fs')
-
-const posthtml = require('posthtml')
-const exp = require('posthtml-exp')
-
-const html = readFileSync('./index.html', 'utf8')
-
-posthtml([ exp ])
-  .process(html)
-  .then(result => console.log(result.html))
-```
-
-###### Input
-
-```html
-
-```
-
-###### Output
-
-```html
-
-```
-
-<h2 align="center">LICENSE</h2>
-
-> MIT License (MIT)
-
-> Copyright (c) 2016 PostHTML Jeff Escalante
-                              Michael Ciniawsky <michael.ciniawsky@gmail.com>
-
-> Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-> The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+- Licensed under [MIT](LICENSE)
+- See [guidelines for contribution](CONTRIBUTING.md)
 
 [npm]: https://img.shields.io/npm/v/posthtml-exp.svg
 [npm-url]: https://npmjs.com/package/posthtml-exp

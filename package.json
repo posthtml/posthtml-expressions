@@ -1,51 +1,38 @@
 {
   "name": "posthtml-exp",
+  "description": "Local variables, expressions, loops, and conditionals for posthtml",
   "version": "0.8.1",
-  "description": "Expressions for PostHTML",
-  "engines": {"node": ">=6"},
-  "main": "index.js",
-  "scripts": {
-    "clean": "echo '=> Cleaning' && sudo rm -rf .nyc_output coverage",
-    "pretest": "echo '=> Linting' && standard",
-    "test": "echo '=> Testing' && npm run clean && nyc ava 'test/index.js'",
-    "start": "echo '=> Starting' && sudo npm test"
-  },
+  "author": "Jeff Escalante",
   "ava": {
     "verbose": "true"
-  },
-  "nyc": {
-    "all": true,
-    "include": [
-      "lib",
-      "test"
-    ],
-    "extension": [
-      ".js"
-    ]
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "ava": "^0.15.2",
-    "nyc": "^6.6.1",
-    "standard": "^7.1.2"
-  },
-  "keywords": [
-    "html",
-    "posthtml",
-    "posthtmlplugin",
-    "expressions"
-  ],
-  "author": {
-    "name": "Michael Ciniawky",
-    "email": "michael.ciniawsky@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/posthtml/posthtml-exp"
   },
   "bugs": {
     "url": "https://github.com/posthtml/posthtml-exp/issues"
   },
-  "homepage": "https://github.com/posthtml/posthtml-exp#readme",
-  "license": "MIT"
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "posthtml": "^0.9.0"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "homepage": "https://github.com/posthtml/posthtml-exp",
+  "keywords": [
+    "expressions",
+    "posthtml",
+    "posthtmlplugin"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https:/github.com/posthtml/posthtml-exp"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "lodash.clonedeep": "^4.3.2",
+    "lodash.merge": "^4.4.0"
+  }
 }
