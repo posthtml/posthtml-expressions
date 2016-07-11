@@ -67,6 +67,10 @@ test('conditional - expression error', (t) => {
   })
 })
 
+test('loop', (t) => {
+  return matchExpected(t, 'loop', { locals: { items: [1, 2, 3] } })
+})
+
 //
 // Utility
 //
