@@ -42,7 +42,7 @@ You can inject locals into any piece of content in your html templates, other th
 
 ```js
 exp({
-  locals: { myClassName: 'introduction', myName: 'Jeff' }
+  locals: { myClassName: 'introduction', myName: 'Marlo' }
 })
 ```
 
@@ -58,7 +58,7 @@ You would get this as your output:
 
 ```html
 <div class="introduction">
-  My name is Jeff
+  My name is Marlo
 </div>
 ```
 
