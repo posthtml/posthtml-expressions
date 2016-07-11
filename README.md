@@ -192,7 +192,7 @@ Output:
 And an example using an object:
 
 ```html
-<each loop="key, value in anObject">
+<each loop="value, key in anObject">
   <p>{{ key }}: {{ value }}</p>
 </each>
 ```
