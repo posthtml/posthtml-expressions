@@ -19,6 +19,14 @@ test('unescaped', (t) => {
   })
 })
 
+test('custom delimiters', (t) => {
+  return matchExpected(t, 'custom_delimiters', {
+    delimiters: ['{%', '%}'],
+    unescapeDelimiters: ['{{%', '%}}'],
+    locals: { test: 'wow' }
+  })
+})
+
 test('expression spacing', (t) => {
   return matchExpected(t, 'expression_spacing', { locals: { foo: 'X' } })
 })
@@ -67,6 +75,13 @@ test('conditional - expression error', (t) => {
   })
 })
 
+test('conditional - custom tags', (t) => {
+  return matchExpected(t, 'conditional_customtags', {
+    conditionalTags: ['zif', 'zelseif', 'zelse'],
+    locals: { foo: 'bar' }
+  })
+})
+
 test('loop', (t) => {
   return matchExpected(t, 'loop', { locals: { items: [1, 2, 3] } })
 })
@@ -92,6 +107,13 @@ test('loop with conflicting locals', (t) => {
 test('nested loops', (t) => {
   return matchExpected(t, 'loop_nested', {
     locals: { items: { c1: [1, 2, 3], c2: [4, 5, 6] } }
+  })
+})
+
+test('loop - custom tag', (t) => {
+  return matchExpected(t, 'loop_customtag', {
+    loopTags: ['zeach'],
+    locals: { items: [1, 2, 3] }
   })
 })
 
