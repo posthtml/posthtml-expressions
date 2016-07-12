@@ -95,6 +95,30 @@ test('nested loops', (t) => {
   })
 })
 
+test('loop - no loop attribute', (t) => {
+  return expectError('loop_no_attr', (err) => {
+    t.truthy(err.toString() === 'Error: the "elseif" tag must have a "loop" attribute')
+  })
+})
+
+test('loop - no array or object passed', (t) => {
+  return expectError('loop_no_collection', (err) => {
+    t.truthy(err.toString() === 'Error: You must provide an array or object to loop through')
+  })
+})
+
+test('loop - no loop arguments', (t) => {
+  return expectError('loop_no_args', (err) => {
+    t.truthy(err.toString() === 'Error: You must provide at least one loop argument')
+  })
+})
+
+test('loop - expression error', (t) => {
+  return expectError('loop_expression_error', (err) => {
+    t.truthy(err.toString() === 'SyntaxError: Unexpected token ILLEGAL')
+  })
+})
+
 //
 // Utility
 //
