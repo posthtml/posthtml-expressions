@@ -113,6 +113,12 @@ test('loop - no loop arguments', (t) => {
   })
 })
 
+test('loop - no "in" keyword', (t) => {
+  return expectError('loop_no_in', (err) => {
+    t.truthy(err.toString() === "Error: Loop statement lacking 'in' keyword")
+  })
+})
+
 test('loop - expression error', (t) => {
   return expectError('loop_expression_error', (err) => {
     t.truthy(err.toString() === 'SyntaxError: Unexpected token ILLEGAL')
