@@ -1,7 +1,7 @@
 {
   "name": "posthtml-exp",
   "description": "Local variables, expressions, loops, and conditionals for posthtml",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "author": "Jeff Escalante",
   "ava": {
     "verbose": "true"
