@@ -1,28 +1,33 @@
-# PostHTML Expressions <img align="right" width="220" height="200" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
-
 [![NPM][npm]][npm-url]
 [![Deps][deps]][deps-url]
-[![Tests][travis]][travis-url]
+[![Tests][build]][build-url]
 [![Coverage][cover]][cover-url]
 [![Standard Code Style][style]][style-url]
+[![Chat][chat]][chat-badge]
+
+# Expressions Plugin <img align="right" width="200" height="220" title="PostHTML logo" src="http://posthtml.github.io/posthtml/logo.svg">
 
 Local variables, expressions, loops, and conditionals in your html.
 
-## Installation
+## Install
 
-First, install from npm with `npm i posthtml-exp --save`, then add it as a plugin to your posthtml pipeline:
-
-```js
-const posthtml = require('posthtml')
-const exp = require('posthtml-exp')
-const {readFileSync} = require('fs')
-
-posthtml(exp({ locals: { foo: 'bar' } }))
-  .process(readFileSync('exampleFile.html', 'utf8'))
-  .then(console.log)
+```bash
+npm i -S posthtml-expressions
 ```
 
 ## Usage
+
+```js
+const { readFileSync } = require('fs')
+
+const posthtml = require('posthtml')
+const exp = require('posthtml-expressions')
+
+
+posthtml(exp({ locals: { foo: 'bar' } }))
+  .process(readFileSync('index.html', 'utf8'))
+  .then((result) => console.log(result.html))
+```
 
 This plugin provides a syntax for including local variables and expressions in your templates, and also extends custom tags to act as helpers for conditionals and looping.
 
@@ -215,10 +220,28 @@ So this would also be fine:
 
 So you don't need to declare all the available variables (in this case, the index is skipped), and the expression after `in` doesn't need to be a local variable, it can be any expression.
 
-### License & Contributing
+## Maintainers
 
-- Licensed under [MIT](LICENSE)
-- See [guidelines for contribution](CONTRIBUTING.md)
+<table>
+  <tbody>
+   <tr>
+    <td align="center">
+      <img width="150 height="150"
+      src="https://avatars.githubusercontent.com/u/556932?v=3&s=150">
+      <br />
+      <a href="https://github.com/jescalan">Jeff Escalante</a>
+    </td>
+   </tr>
+  <tbody>
+</table>
+
+## Contributing
+
+See [PostHTML Guidelines](https://github.com/posthtml/posthtml/tree/master/docs) and [contribution guide](CONTRIBUTING.md).
+
+## LICENSE
+
+[MIT](LICENSE)
 
 [npm]: https://img.shields.io/npm/v/posthtml-exp.svg
 [npm-url]: https://npmjs.com/package/posthtml-exp
@@ -226,11 +249,14 @@ So you don't need to declare all the available variables (in this case, the inde
 [deps]: https://david-dm.org/posthtml/posthtml-exp.svg
 [deps-url]: https://david-dm.org/posthtml/posthtml-exp
 
-[style]: https://img.shields.io/badge/code%20style-standard-yellow.svg
-[style-url]: http://standardjs.com/
-
-[travis]: http://img.shields.io/travis/posthtml/posthtml-exp.svg
-[travis-url]: https://travis-ci.org/posthtml/posthtml-exp
+[build]: http://img.shields.io/travis/posthtml/posthtml-exp.svg
+[build-url]: https://travis-ci.org/posthtml/posthtml-exp
 
 [cover]: https://coveralls.io/repos/github/posthtml/posthtml-exp/badge.svg?branch=master
 [cover-url]: https://coveralls.io/github/posthtml/posthtml-exp?branch=master
+
+[style]: https://img.shields.io/badge/code%20style-standard-yellow.svg
+[style-url]: http://standardjs.com/
+
+[chat]: https://badges.gitter.im/posthtml/posthtml.svg
+[chat-badge]: https://gitter.im/posthtml/posthtml?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"
