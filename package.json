@@ -19,7 +19,7 @@
     "nyc": "^8.1.0",
     "posthtml": "^0.9.0",
     "snazzy": "^4.0.0",
-    "standard": "^8.1.0"
+    "standard": "^8.2.0"
   },
   "engines": {
     "node": ">=6"
