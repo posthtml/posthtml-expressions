@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "ava": "^0.16.0",
-    "coveralls": "^2.11.9",
+    "coveralls": "^2.11.13",
     "nyc": "^8.1.0",
     "posthtml": "^0.9.0",
     "snazzy": "^4.0.0",
