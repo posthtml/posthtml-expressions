@@ -82,6 +82,12 @@ test('conditional - custom tags', (t) => {
   })
 })
 
+test('conditional - expression in else/elseif', (t) => {
+  return matchExpected(t, 'conditional_expression', {
+    locals: { foo: 'bar' }
+  })
+})
+
 test('loop', (t) => {
   return matchExpected(t, 'loop', { locals: { items: [1, 2, 3] } })
 })
