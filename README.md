@@ -168,7 +168,7 @@ else
   p Foo is probably just foo in the end.
 ```
 
-#### Loops
+### Loops
 
 You can use the `each` tag to build loops. It works with both arrays and objects. For example:
 
