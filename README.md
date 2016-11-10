@@ -225,11 +225,19 @@ So you don't need to declare all the available variables (in this case, the inde
 
 You can replace locals inside certain area wrapped in `<scope>` tag. For example you can use it after [posthtml-include](https://github.com/posthtml/posthtml-include) 
 
+```js
+exp({
+  locals: {
+    author: { name: 'John', ... },
+    editor: { name: 'Jeff', ... }
+  }
+})
+```
+
 ```html
 <scope with="author">
   <include src="components/profile.html"></include>
 </scope>
-
 <scope with="editor">
   <include src="components/profile.html"></include>
 </scope>
