@@ -40,6 +40,7 @@ You have full control over the delimiters used for injecting locals, as well as 
 | **locals** | Object containing any local variables you want to be available inside your expressions. |
 | **conditionalTags** | Array containing names for tags used for standard `if`/`else if`/`else` logic | `['if', 'elseif', 'else']` |
 | **loopTags** | Array containing names for standard `for` loop logic | `['each']` |
+| **scopeTags** | Array containing names for scoping tag | `['scope']` |
 
 ### Locals
 
@@ -219,6 +220,29 @@ So this would also be fine:
 ```
 
 So you don't need to declare all the available variables (in this case, the index is skipped), and the expression after `in` doesn't need to be a local variable, it can be any expression.
+
+### Scoping
+
+You can replace locals inside certain area wrapped in `<scope>` tag. For example you can use it after [posthtml-include](https://github.com/posthtml/posthtml-include) 
+
+```html
+<scope with="author">
+  <include src="components/profile.html"></include>
+</scope>
+
+<scope with="editor">
+  <include src="components/profile.html"></include>
+</scope>
+```
+
+```html
+<div class="profile preview">
+  <div class="profile-name">{{ name }}</div>
+  <img class="profile-avatar" src="{{ image_url }}" alt="{{ name }}'s avatar" />
+  <a href="{{ profile_link }}">more info</a>
+</div>
+```
+
 
 ## Maintainers
 
