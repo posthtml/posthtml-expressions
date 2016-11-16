@@ -116,6 +116,12 @@ test('nested loops', (t) => {
   })
 })
 
+test('loop with included conditional', (t) => {
+  return matchExpected(t, 'loop_conditional', {
+    locals: { items: [1, 2, 3] }
+  })
+})
+
 test('loop - custom tag', (t) => {
   return matchExpected(t, 'loop_customtag', {
     loopTags: ['zeach'],
