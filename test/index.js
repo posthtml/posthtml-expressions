@@ -169,8 +169,8 @@ function matchExpected (t, name, config, log = false) {
 
   return posthtml([exp(config)])
     .process(html)
-    .then((res) => { log && console.log(res.html); return res })
-    .then((res) => { t.truthy(res.html.trim() === expected.trim()) })
+    .then((res) => { log && console.log(res.html); return cleanHtml(res.html) })
+    .then((html) => { t.truthy(html === expected.trim()) })
 }
 
 function expectError (name, cb) {
@@ -179,4 +179,8 @@ function expectError (name, cb) {
   return posthtml([exp()])
     .process(html)
     .catch(cb)
+}
+
+function cleanHtml (html) {
+  return html.replace(/[^\S\r\n]+$/gm, '').trim()
 }
