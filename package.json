@@ -22,7 +22,7 @@
     "standard": "^8.2.0"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=4"
   },
   "homepage": "https://github.com/posthtml/posthtml-expressions",
   "keywords": [
