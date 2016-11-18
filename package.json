@@ -10,7 +10,7 @@
     "url": "https://github.com/posthtml/posthtml-expressions/issues"
   },
   "dependencies": {
-    "lodash.clonedeep": "^4.3.2"
+    "fclone": "^1.0.10"
   },
   "devDependencies": {
     "ava": "^0.16.0",
