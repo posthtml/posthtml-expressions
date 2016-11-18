@@ -169,6 +169,23 @@ test('scope', (t) => {
   })
 })
 
+test('nested scope', (t) => {
+  return matchExpected(t, 'scope_nested', {
+    locals: {
+      key: 'global',
+      scope: {
+        key: 'scope',
+        one: {
+          key: 'one'
+        },
+        two: {
+          key: 'two'
+        }
+      }
+    }
+  })
+})
+
 //
 // Utility
 //
