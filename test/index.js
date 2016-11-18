@@ -159,7 +159,7 @@ test('loop - expression error', (t) => {
   })
 })
 
-test('scope - custom tag', (t) => {
+test('scope', (t) => {
   return matchExpected(t, 'scope', {
     locals: {
       author: { name: 'John', age: 26 },
