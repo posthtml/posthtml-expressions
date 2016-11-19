@@ -7,7 +7,7 @@
 [![chat][chat]][chat-url]
 
 <div align="center">
-  <img width="110" height="100" title="PostHTML Plugin" src="http://michael-ciniawsky.github.io/postcss-load-plugins/logo.svg">
+  <img width="110" height="100" title="PostHTML Plugin" vspace="50" src="http://michael-ciniawsky.github.io/postcss-load-plugins/logo.svg">
   <img width="220" height="200" title="PostHTML" src="http://posthtml.github.io/posthtml/logo.svg">
   <h1>Expressions Plugin</h1>
 </div>
@@ -15,7 +15,7 @@
 <h2 align="center">Install</h2>
 
 ```bash
-npm i -D posthtml-expressions
+npm i -D posthtml-expressionsressions
 ```
 
 <h2 align="center">Usage</h2>
@@ -24,16 +24,16 @@ npm i -D posthtml-expressions
 const { readFileSync } = require('fs')
 
 const posthtml = require('posthtml')
-const expressions = require('posthtml-expressions')
+const expressionsressions = require('posthtml-expressionsressions')
 
-posthtml(expressions({ locals: { foo: 'bar' } }))
+posthtml(expressionsressions({ locals: { foo: 'bar' } }))
   .process(readFileSync('index.html', 'utf8'))
   .then((result) => console.log(result.html))
 ```
 
-This plugin provides a syntax for including local variables and expressions in your templates, and also extends custom tags to act as helpers for conditionals and looping.
+This plugin provides a syntax for including local variables and expressionsressions in your templates, and also extends custom tags to act as helpers for conditionals and looping.
 
-You have full control over the delimiters used for injecting locals, as well as the tag names for the conditional and loop helpers, if you need them. All options that can be passed to the `exp` plugin are shown below:
+You have full control over the delimiters used for injecting locals, as well as the tag names for the conditional and loop helpers, if you need them. All options that can be passed to the `expressions` plugin are shown below:
 
 <h2 align="center">Options</h2>
 
@@ -41,14 +41,14 @@ You have full control over the delimiters used for injecting locals, as well as 
 |:----:|:-----:|:----------|
 | **delimiters** | `['{{', '}}']` | Array containing beginning and ending delimiters for escaped locals |
 | **unescapeDelimiters** | `['{{{', '}}}']` | Array containing beginning and ending delimiters for unescaped locals |
-| **locals** | `{}` | Object containing any local variables you want to be available inside your expressions |
+| **locals** | `{}` | Object containing any local variables you want to be available inside your expressionsressions |
 | **conditionalTags** | `['if', 'elseif', 'else']` | Array containing names for tags used for `if/else if/else` statements |
 | **loopTags** | `['each']` | Array containing names for `for` loops |
 | **scopeTags** | `['scope']` | Array containing names for scopes |
 
 ### Locals
 
-You can inject locals into any piece of content in your html templates, other than overwriting tag names. For example, if you passed the following config to the exp plugin:
+You can inject locals into any piece of content in your html templates, other than overwriting tag names. For example, if you passed the following config to the expressions plugin:
 
 ```js
 locals: { className: 'intro', name: 'Marlo' }
@@ -96,13 +96,13 @@ In this case, your code would render as html:
 
 ### Expressions
 
-You are not limited to just directly rendering local variables either, you can include any type of javascript expression and it will be evaluated, with the result rendered. For example:
+You are not limited to just directly rendering local variables either, you can include any type of javascript expressionsression and it will be evaluated, with the result rendered. For example:
 
 ```html
 <p class="{{ env === 'production' ? 'active' : 'hidden' }}">in production!</p>
 ```
 
-With this in mind, it is strongly recommended to limit the number and complexity of expressions that are run directly in your template. You can always move the logic back to your config file and provide a function to the locals object for a smoother and easier result. For example:
+With this in mind, it is strongly recommended to limit the number and complexity of expressionsressions that are run directly in your template. You can always move the logic back to your config file and provide a function to the locals object for a smoother and easier result. For example:
 
 ```js
 locals: {
@@ -140,7 +140,7 @@ locals: { foo: 'foo' }
 <p>Foo is probably just foo in the end.</p>
 ```
 
-Anything in the `condition` attribute is evaluated directly as an expression.
+Anything in the `condition` attribute is evaluated directly as an expressionsression.
 
 It should be noted that this is slightly cleaner-looking if you are using the [SugarML parser](https://github.com/posthtml/sugarml). But then again so is every other part of html.
 
@@ -189,7 +189,7 @@ locals: {
 <p>foo: bar</p>
 ```
 
-The value of the `loop` attribute is not a pure expression evaluation, and it does have a tiny and simple custom parser. Essentially, it starts with one or more variable declarations, comma-separated, followed by the word `in`, followed by an expression.
+The value of the `loop` attribute is not a pure expressionsression evaluation, and it does have a tiny and simple custom parser. Essentially, it starts with one or more variable declarations, comma-separated, followed by the word `in`, followed by an expressionsression.
 
 
 ```html
@@ -198,7 +198,7 @@ The value of the `loop` attribute is not a pure expression evaluation, and it do
 </each>
 ```
 
-So you don't need to declare all the available variables (in this case, the index is skipped), and the expression after `in` doesn't need to be a local variable, it can be any expression.
+So you don't need to declare all the available variables (in this case, the index is skipped), and the expressionsression after `in` doesn't need to be a local variable, it can be any expressionsression.
 
 ### Scopes
 
@@ -265,20 +265,20 @@ locals: {
 </table>
 
 
-[npm]: https://img.shields.io/npm/v/posthtml-exp.svg
-[npm-url]: https://npmjs.com/package/posthtml-exp
+[npm]: https://img.shields.io/npm/v/posthtml-expressions.svg
+[npm-url]: https://npmjs.com/package/posthtml-expressions
 
 [node]: https://img.shields.io/node/v/posthtml-include.svg
 [node-url]: https://nodejs.org/
 
-[deps]: https://david-dm.org/posthtml/posthtml-exp.svg
-[deps-url]: https://david-dm.org/posthtml/posthtml-exp
+[deps]: https://david-dm.org/posthtml/posthtml-expressions.svg
+[deps-url]: https://david-dm.org/posthtml/posthtml-expressions
 
-[tests]: http://img.shields.io/travis/posthtml/posthtml-exp.svg
-[tests-url]: https://travis-ci.org/posthtml/posthtml-exp
+[tests]: http://img.shields.io/travis/posthtml/posthtml-expressions.svg
+[tests-url]: https://travis-ci.org/posthtml/posthtml-expressions
 
-[cover]: https://coveralls.io/repos/github/posthtml/posthtml-exp/badge.svg?branch=master
-[cover-url]: https://coveralls.io/github/posthtml/posthtml-exp?branch=master
+[cover]: https://coveralls.io/repos/github/posthtml/posthtml-expressions/badge.svg
+[cover-url]: https://coveralls.io/github/posthtml/posthtml-expressions
 
 [style]: https://img.shields.io/badge/code%20style-standard-yellow.svg
 [style-url]: http://standardjs.com/
