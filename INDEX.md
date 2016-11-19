@@ -44,7 +44,7 @@
 <dd><p>Replace Expressions</p>
 </dd>
 <dt><a href="#getNextTag">getNextTag(nodes, i)</a> ⇒ <code>Array</code></dt>
-<dd><p>Get the nect tag from a node list</p>
+<dd><p>Get the next tag from a node list</p>
 </dd>
 </dl>
 
@@ -199,10 +199,10 @@ Replace Expressions
 <a name="getNextTag"></a>
 
 ## getNextTag(nodes, i) ⇒ <code>Array</code>
-Get the nect tag from a node list
+Get the next tag from a node list
 
 **Kind**: global function  
-**Returns**: <code>Array</code> - []    Array containing the next tag in nodes  
+**Returns**: <code>Array</code> - []    Array containing the next tag  
 
 | Param | Type | Description |
 | --- | --- | --- |
