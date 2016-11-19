@@ -260,6 +260,12 @@ locals: {
       <br>
       <a href="https://github.com/michael-ciniawsky">Michael Ciniawsky</a>
     </td>
+    <td align="center">
+      <img width="150 height="150"
+      src="https://avatars.githubusercontent.com/u/17473315?v=3&s=150">
+      <br>
+      <a href="https://github.com/xakdog">Krillin</a>
+    </td>
    </tr>
   <tbody>
 </table>
@@ -268,7 +274,7 @@ locals: {
 [npm]: https://img.shields.io/npm/v/posthtml-expressions.svg
 [npm-url]: https://npmjs.com/package/posthtml-expressions
 
-[node]: https://img.shields.io/node/v/posthtml-include.svg
+[node]: https://img.shields.io/node/v/posthtml-expressions.svg
 [node-url]: https://nodejs.org/
 
 [deps]: https://david-dm.org/posthtml/posthtml-expressions.svg
