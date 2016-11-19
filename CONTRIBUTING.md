@@ -1,58 +1,60 @@
-# Contributing Guidelines
+You want to help? You rock! Now, take a moment to be sure your contributions make sense to everyone else.
 
-Contributions welcome!
+## Reporting Issues
 
-**Before spending lots of time on something, ask for feedback on your idea first!**
+Found a problem? Want a new feature?
 
-Please search issues and pull requests before adding something new to avoid duplicating efforts and conversations.
+- See if your issue or idea has [already been reported].
+- Provide a [reduced test case] or a [live example].
 
-This project welcomes non-code contributions, too! The following types of contributions are welcome:
+Remember, a bug is a _demonstrable problem_ caused by _our_ code.
 
-- **Ideas**: participate in an issue thread or start your own to have your voice heard.
-- **Writing**: contribute your expertise in an area by helping expand the included docs.
-- **Copy editing**: fix typos, clarify language, and improve the quality of the docs.
-- **Formatting**: help keep docs easy to read with consistent formatting.
+## Submitting Pull Requests
 
-## Code Style
+Pull requests are the greatest contributions, so be sure they are focused in scope, and do avoid unrelated commits.
 
-[![standard][standard-image]][standard-url]
+1. To begin, [fork this project], clone your fork, and add our upstream.
+	```bash
+	# Clone your fork of the repo into the current directory
+	git clone https://github.com/<your-username>/PLUGIN_NAME
+	# Navigate to the newly cloned directory
+	cd PLUGIN_NAME
+	# Assign the original repo to a remote called "upstream"
+	git remote add upstream https://github.com/GITHUB_NAME/PLUGIN_NAME
+	# Install the tools necessary for development
+	npm install
+	```
 
-This repository uses [`standard`][standard-url] to maintain code style and consistency,
-and to avoid style arguments. `npm test` runs `standard` automatically, so you don't have
-to!
+2. Create a branch for your feature or fix:
+	```bash
+	# Move into a new branch for a feature
+	git checkout -b feature/thing
+	```
+	```bash
+	# Move into a new branch for a fix
+	git checkout -b fix/something
+	```
 
-## Project Governance
+3. Be sure your code follows our practices.
+	```bash
+	# Test current code
+	npm run test
+	```
 
-Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit. This project is more like an open wiki than a standard guarded open source project.
+4. Push your branch up to your fork:
+	```bash
+	# Push a feature branch
+	git push origin feature/thing
+	```
+	```bash
+	# Push a fix branch
+	git push origin fix/something
+	```
 
-### Rules
+5. Now [open a pull request] with a clear title and description.
 
-There are a few basic ground-rules for contributors:
-
-1. **No `--force` pushes** or modifying the Git history in any way.
-2. **Non-master branches** should be used for ongoing work.
-3. **Significant modifications** like API changes should be subject to a **pull request** to solicit feedback from other contributors.
-4. **Pull requests** are *encouraged* for all contributions to solicit feedback, but left to the discretion of the contributor.
-
-### Releases
-
-Declaring formal releases remains the prerogative of the project maintainer.
-
-### Changes to this arrangement
-
-This is an experiment and feedback is welcome! This document may also be subject to pull-requests or changes by contributors where you believe you have something valuable to add or change.
-
-## Developer's Certificate of Origin 1.1
-
-By making a contribution to this project, I certify that:
-
-- (a) The contribution was created in whole or in part by me and I have the right to submit it under the open source license indicated in the file; or
-
-- (b) The contribution is based upon previous work that, to the best of my knowledge, is covered under an appropriate open source license and I have the right under that license to submit that work with modifications, whether created in whole or in part by me, under the same open source license (unless I am permitted to submit under a different license), as indicated in the file; or
-
-- (c) The contribution was provided directly to me by some other person who certified (a), (b) or (c) and I have not modified it.
-
-- (d) I understand and agree that this project and the contribution are public and that a record of the contribution (including all personal information I submit with it, including my sign-off) is maintained indefinitely and may be redistributed consistent with this project or the open source license(s) involved.
-
-[standard-image]: https://cdn.rawgit.com/feross/standard/master/badge.svg
-[standard-url]: https://github.com/feross/standard
+[already been reported]: issues
+[fork this project]:     fork
+[live example]:          http://codepen.io/pen
+[open a pull request]:   https://help.github.com/articles/using-pull-requests/
+[reduced test case]:     https://css-tricks.com/reduced-test-cases/
