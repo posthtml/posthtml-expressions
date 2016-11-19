@@ -15,7 +15,7 @@
 <h2 align="center">Install</h2>
 
 ```bash
-npm i -D posthtml-expressionsressions
+npm i -D posthtml-expressions
 ```
 
 <h2 align="center">Usage</h2>
@@ -24,14 +24,14 @@ npm i -D posthtml-expressionsressions
 const { readFileSync } = require('fs')
 
 const posthtml = require('posthtml')
-const expressionsressions = require('posthtml-expressionsressions')
+const expressions = require('posthtml-expressions')
 
-posthtml(expressionsressions({ locals: { foo: 'bar' } }))
+posthtml(expressions({ locals: { foo: 'bar' } }))
   .process(readFileSync('index.html', 'utf8'))
   .then((result) => console.log(result.html))
 ```
 
-This plugin provides a syntax for including local variables and expressionsressions in your templates, and also extends custom tags to act as helpers for conditionals and looping.
+This plugin provides a syntax for including local variables and expressions in your templates, and also extends custom tags to act as helpers for conditionals and looping.
 
 You have full control over the delimiters used for injecting locals, as well as the tag names for the conditional and loop helpers, if you need them. All options that can be passed to the `expressions` plugin are shown below:
 
@@ -41,7 +41,7 @@ You have full control over the delimiters used for injecting locals, as well as 
 |:----:|:-----:|:----------|
 | **delimiters** | `['{{', '}}']` | Array containing beginning and ending delimiters for escaped locals |
 | **unescapeDelimiters** | `['{{{', '}}}']` | Array containing beginning and ending delimiters for unescaped locals |
-| **locals** | `{}` | Object containing any local variables you want to be available inside your expressionsressions |
+| **locals** | `{}` | Object containing any local variables you want to be available inside your expressions |
 | **conditionalTags** | `['if', 'elseif', 'else']` | Array containing names for tags used for `if/else if/else` statements |
 | **loopTags** | `['each']` | Array containing names for `for` loops |
 | **scopeTags** | `['scope']` | Array containing names for scopes |
@@ -96,13 +96,13 @@ In this case, your code would render as html:
 
 ### Expressions
 
-You are not limited to just directly rendering local variables either, you can include any type of javascript expressionsression and it will be evaluated, with the result rendered. For example:
+You are not limited to just directly rendering local variables either, you can include any type of javascript expressions and it will be evaluated, with the result rendered. For example:
 
 ```html
 <p class="{{ env === 'production' ? 'active' : 'hidden' }}">in production!</p>
 ```
 
-With this in mind, it is strongly recommended to limit the number and complexity of expressionsressions that are run directly in your template. You can always move the logic back to your config file and provide a function to the locals object for a smoother and easier result. For example:
+With this in mind, it is strongly recommended to limit the number and complexity of expressions that are run directly in your template. You can always move the logic back to your config file and provide a function to the locals object for a smoother and easier result. For example:
 
 ```js
 locals: {
@@ -140,7 +140,7 @@ locals: { foo: 'foo' }
 <p>Foo is probably just foo in the end.</p>
 ```
 
-Anything in the `condition` attribute is evaluated directly as an expressionsression.
+Anything in the `condition` attribute is evaluated directly as an expressions.
 
 It should be noted that this is slightly cleaner-looking if you are using the [SugarML parser](https://github.com/posthtml/sugarml). But then again so is every other part of html.
 
@@ -189,7 +189,7 @@ locals: {
 <p>foo: bar</p>
 ```
 
-The value of the `loop` attribute is not a pure expressionsression evaluation, and it does have a tiny and simple custom parser. Essentially, it starts with one or more variable declarations, comma-separated, followed by the word `in`, followed by an expressionsression.
+The value of the `loop` attribute is not a pure expressions evaluation, and it does have a tiny and simple custom parser. Essentially, it starts with one or more variable declarations, comma-separated, followed by the word `in`, followed by an expressions.
 
 
 ```html
@@ -198,7 +198,7 @@ The value of the `loop` attribute is not a pure expressionsression evaluation, a
 </each>
 ```
 
-So you don't need to declare all the available variables (in this case, the index is skipped), and the expressionsression after `in` doesn't need to be a local variable, it can be any expressionsression.
+So you don't need to declare all the available variables (in this case, the index is skipped), and the expressions after `in` doesn't need to be a local variable, it can be any expressions.
 
 ### Scopes
 
