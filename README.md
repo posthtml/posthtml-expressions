@@ -43,6 +43,7 @@ You have full control over the delimiters used for injecting locals, as well as 
 | **unescapeDelimiters** | `['{{{', '}}}']` | Array containing beginning and ending delimiters for unescaped locals |
 | **locals** | `{}` | Object containing any local variables you want to be available inside your expressions |
 | **conditionalTags** | `['if', 'elseif', 'else']` | Array containing names for tags used for `if/else if/else` statements |
+| **switchTags** | `['switch', 'case', 'default']` | Array containing names for tags used for `switch/case/default` statements |
 | **loopTags** | `['each']` | Array containing names for `for` loops |
 | **scopeTags** | `['scope']` | Array containing names for scopes |
 
@@ -154,6 +155,34 @@ elseif(condition="foo === 'wow'")
 else
   p Foo is probably just foo in the end.
 ```
+
+### Switch statement
+
+Switch statements act like streamline conditionals. They are useful for when you want to compare a single variable against a series of constants.
+
+```js
+locals: { foo: 'foo' }
+```
+
+```html
+<switch expression="foo">
+  <case n="'bar'">
+    <p>Foo really is bar! Revolutionary!</p>
+  </case>
+  <case n="'wow'">
+    <p>Foo is wow, oh man.</p>
+  </case>
+  <default>
+    <p>Foo is probably just foo in the end.</p>
+  </default>
+</switch>
+```
+
+```html
+<p>Foo is probably just foo in the end.</p>
+```
+
+Anything in the `expression` attribute is evaluated directly as an expressions.
 
 ### Loops
 
