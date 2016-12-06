@@ -120,6 +120,60 @@ test('Conditionals - expression in else/elseif', (t) => {
   })
 })
 
+test('Switch', (t) => {
+  return Promise.all([
+    process(t, 'switch', { locals: { country: 'germany' } })
+  ])
+})
+
+test('Switch - default branch', (t) => {
+  return Promise.all([
+    process(t, 'switch_default', { locals: { country: 'venezuela' } })
+  ])
+})
+
+test('Switch - nested', (t) => {
+  return Promise.all([
+    process(t, 'switch_nested', {
+      locals: {
+        country_one: 'venezuela',
+        country_two: 'russia'
+      }
+    })
+  ])
+})
+
+test('Switch - custom tag', (t) => {
+  return process(t, 'switch_customtag', {
+    switchTags: ['s', 'c', 'd'],
+    locals: { country: 'us' }
+  })
+})
+
+test('Switch - dynamic expression', (t) => {
+  return Promise.all([
+    process(t, 'switch_number', { locals: { items: [1, 2, 3] } })
+  ])
+})
+
+test('Switch - no switch attribute', (t) => {
+  return error('switch_no_attr', (err) => {
+    t.truthy(err.toString() === 'Error: the "switch" tag must have a "expression" attribute')
+  })
+})
+
+test('Switch - no case attribute', (t) => {
+  return error('switch_no_case_attr', (err) => {
+    t.truthy(err.toString() === 'Error: the "case" tag must have a "n" attribute')
+  })
+})
+
+test('Switch - bad flow', (t) => {
+  return error('switch_bad_flow', (err) => {
+    t.truthy(err.toString() === 'the "switch" tag can contain only "case" tags and one "default" tag')
+  })
+})
+
 test('Loops', (t) => {
   return process(t, 'loop', { locals: { items: [1, 2, 3] } })
 })
