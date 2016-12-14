@@ -1,37 +1,33 @@
 {
   "name": "posthtml-expressions",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Expressions Plugin for PostHTML",
-  "engines": { "npm": ">=3", "node": ">=4" },
+  "engines": { "node": ">=4" },
   "main":"lib",
   "scripts": {
     "lint": "standard",
-    "test": "nyc ava test/index.js",
+    "test": "nyc ava -v test/index.js",
     "logs": "standard-changelog -i CHANGELOG.md -w",
     "docs": "jsdoc2md lib/*.js > INDEX.md",
     "clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
     "start": "sudo npm run clean && npm run lint && sudo npm test"
   },
   "dependencies": {
-    "fclone": "^1.0.10"
+    "fclone": "^1.x"
   },
   "devDependencies": {
-    "ava": "^0.17.0",
-    "coveralls": "^2.11.15",
-    "jsdoc-to-markdown": "^2.0.0",
-    "nyc": "^10.0.0",
-    "posthtml": "^0.9.1",
-    "standard": "^8.4.0",
-    "standard-changelog": "^0.0.1"
+    "ava": "^0.17.x",
+    "coveralls": "^2.x",
+    "jsdoc-to-markdown": "^2.x",
+    "nyc": "^10.x",
+    "posthtml": "^0.9.x",
+    "standard": "^8.x",
+    "standard-changelog": "^0.0.x"
   },
-  "ava": {
-    "verbose": "true"
-  },
-  "nyc": {
-    "all": true,
-    "include": ["lib"],
-    "extension": [".js"]
-  },
+  "files": [
+    "lib",
+    "LICENSE"
+  ],
   "keywords": [
     "expressions",
     "posthtml",
