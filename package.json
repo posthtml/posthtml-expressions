@@ -16,7 +16,7 @@
     "fclone": "^1.x"
   },
   "devDependencies": {
-    "ava": "^0.17.x",
+    "ava": "^0.18.0",
     "coveralls": "^2.x",
     "jsdoc-to-markdown": "^2.x",
     "nyc": "^10.x",
