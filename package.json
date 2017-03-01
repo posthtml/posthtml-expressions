@@ -21,7 +21,7 @@
     "jsdoc-to-markdown": "^3.0.0",
     "nyc": "^10.x",
     "posthtml": "^0.9.x",
-    "standard": "^8.x",
+    "standard": "^9.0.0",
     "standard-changelog": "^0.0.x"
   },
   "files": [
