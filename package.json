@@ -19,7 +19,7 @@
     "ava": "^0.19.1",
     "coveralls": "^2.13.1",
     "jsdoc-to-markdown": "^3.0.0",
-    "nyc": "^10.x",
+    "nyc": "^10.3.0",
     "posthtml": "^0.9.x",
     "standard": "^10.0.2",
     "standard-changelog": "^1.0.0"
