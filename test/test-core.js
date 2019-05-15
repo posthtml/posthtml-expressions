@@ -65,6 +65,6 @@ test('Expressions - spacing', (t) => {
 
 test('Expressions - error', (t) => {
   return error('expression_error', (err) => {
-    t.truthy(err.toString() === 'SyntaxError: Unexpected token ILLEGAL')
+    t.is(err.message, 'Invalid or unexpected token')
   })
 })

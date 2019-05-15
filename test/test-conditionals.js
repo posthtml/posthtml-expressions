@@ -71,7 +71,7 @@ test('Conditionals - nested conditionals', (t) => {
 
 test('conditional - expression error', (t) => {
   return error('conditional_expression_error', (err) => {
-    t.truthy(err.toString() === 'SyntaxError: Unexpected token ILLEGAL')
+    t.is(err.message, 'Invalid or unexpected token')
   })
 })
 

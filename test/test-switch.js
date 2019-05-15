@@ -81,12 +81,12 @@ test('Switch - no switch attribute', (t) => {
 
 test('Switch - no case attribute', (t) => {
   return error('switch_no_case_attr', (err) => {
-    t.truthy(err.toString() === 'Error: the "case" tag must have a "n" attribute')
+    t.is(err.message,  'the "switch" tag must have a "expression" attribute')
   })
 })
 
 test('Switch - bad flow', (t) => {
   return error('switch_bad_flow', (err) => {
-    t.truthy(err.toString() === 'the "switch" tag can contain only "case" tags and one "default" tag')
+    t.is(err.message, 'the "switch" tag can contain only "case" tags and one "default" tag')
   })
 })

@@ -80,7 +80,7 @@ test('Loops - custom tag', (t) => {
 
 test('Loops - no loop attribute', (t) => {
   return error('loop_no_attr', (err) => {
-    t.truthy(err.toString() === 'Error: the "elseif" tag must have a "loop" attribute')
+    t.is(err.message, 'the "each" tag must have a "loop" attribute')
   })
 })
 
@@ -104,6 +104,6 @@ test('Loops - no "in" keyword', (t) => {
 
 test('Loops - expression error', (t) => {
   return error('loop_expression_error', (err) => {
-    t.truthy(err.toString() === 'SyntaxError: Unexpected token ILLEGAL')
+    t.is(err.message, 'Invalid or unexpected token')
   })
 })
