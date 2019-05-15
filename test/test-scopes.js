@@ -27,12 +27,6 @@ function process (t, name, options, log = false) {
     })
 }
 
-function error (name, cb) {
-  return posthtml([ expressions() ])
-    .process(fixture(name))
-    .catch(cb)
-}
-
 function clean (html) {
   return html.replace(/[^\S\r\n]+$/gm, '').trim()
 }

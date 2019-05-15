@@ -81,7 +81,7 @@ test('Switch - no switch attribute', (t) => {
 
 test('Switch - no case attribute', (t) => {
   return error('switch_no_case_attr', (err) => {
-    t.is(err.message,  'the "switch" tag must have a "expression" attribute')
+    t.is(err.message, 'the "switch" tag must have a "expression" attribute')
   })
 })
 
