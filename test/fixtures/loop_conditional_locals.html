@@ -1,0 +1,10 @@
+<p>x</p>
+<each loop="page in pages">
+  <if condition="page.path === current_path">
+    <a class="selected" href="{{ page.path }}">{{ page.title }}</a>
+  </if>
+  <else>
+    <a href="{{ page.path }}">{{ page.title }}</a>
+  </else>
+</each>
+<p>x</p>
