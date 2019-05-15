@@ -15,16 +15,16 @@
     "start": "sudo npm run clean && npm run lint && sudo npm test"
   },
   "dependencies": {
-    "fclone": "^1.x"
+    "fclone": "^1.0.11"
   },
   "devDependencies": {
-    "ava": "^0.19.1",
-    "coveralls": "^2.13.1",
-    "jsdoc-to-markdown": "^3.0.0",
-    "nyc": "^10.3.2",
-    "posthtml": "^0.9.x",
-    "standard": "^10.0.2",
-    "standard-changelog": "^1.0.0"
+    "ava": "^1.4.1",
+    "coveralls": "^3.0.3",
+    "jsdoc-to-markdown": "^5.0.0",
+    "nyc": "^14.1.1",
+    "posthtml": "^0.11.4",
+    "standard": "^12.0.1",
+    "standard-changelog": "^2.0.11"
   },
   "files": [
     "lib",
