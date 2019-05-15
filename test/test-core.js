@@ -67,7 +67,4 @@ test('Expressions - error', (t) => {
     return error('expression_error', (err) => {
       t.is(err.name, 'SyntaxError');
     })
-  // return error('expression_error', (err) => {
-  //   t.is(err.message, 'Invalid or unexpected token')
-  // })
 })
