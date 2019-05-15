@@ -2,11 +2,13 @@
   "name": "posthtml-expressions",
   "version": "1.1.0",
   "description": "Expressions Plugin for PostHTML",
-  "engines": { "node": ">=4" },
-  "main":"lib",
+  "engines": {
+    "node": ">=4"
+  },
+  "main": "lib",
   "scripts": {
     "lint": "standard",
-    "test": "nyc ava -v test/index.js",
+    "test": "nyc ava",
     "logs": "standard-changelog -i CHANGELOG.md -w",
     "docs": "jsdoc2md lib/*.js > INDEX.md",
     "clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
