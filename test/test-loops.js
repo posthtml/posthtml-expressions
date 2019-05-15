@@ -23,7 +23,7 @@ function process (t, name, options, log = false) {
       return clean(result.html)
     })
     .then((html) => {
-      t.truthy(html === expect(name).trim())
+      t.is(html, expect(name).trim())
     })
 }
 
@@ -62,6 +62,19 @@ test('Loops - locals included', (t) => {
 test('Loops - conditional included', (t) => {
   return process(t, 'loop_conditional', {
     locals: { items: [1, 2, 3] }
+  })
+})
+
+test('Loops - conditional and locals included', (t) => {
+  return process(t, 'loop_conditional_locals', {
+    locals: {
+      pages: [
+        { path: "/page1", title: "Page 1" },
+        { path: "/page2", title: "Page 2" },
+        { path: "/page3", title: "Page 3" }
+      ],
+      current_path: '/page1'
+    }
   })
 })
 
