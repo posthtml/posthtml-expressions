@@ -116,6 +116,22 @@ locals: {
 <p class="{{ isProduction(env) }}">in production!</p>
 ```
 
+#### Ignoring Expressions
+
+Many JavaScript frameworks use `{{` and `}}` as expression delimiters. It can even happen that another framework uses the same _custom_ delimiters you have defined in this plugin.
+
+You can tell the plugin to completely ignore an expression by prepending `@` to the delimiters:
+
+```html
+<p>The @{{ foo }} is strong with this one.</p>
+```
+
+Result:
+
+```html
+<p>The {{ foo }} is strong with this one.</p>
+```
+
 ### Conditionals
 
 Conditional logic uses normal html tags, and modifies/replaces them with the results of the logic. If there is any chance of a conflict with other custom tag names, you are welcome to change the tag names this plugin looks for in the options. For example, given the following config:
