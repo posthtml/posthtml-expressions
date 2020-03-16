@@ -46,6 +46,7 @@ You have full control over the delimiters used for injecting locals, as well as 
 | **switchTags** | `['switch', 'case', 'default']` | Array containing names for tags used for `switch/case/default` statements |
 | **loopTags** | `['each']` | Array containing names for `for` loops |
 | **scopeTags** | `['scope']` | Array containing names for scopes |
+| **ignoredTag** | `'raw'` | String containing name of tag inside which parsing is disabled |
 
 ### Locals
 
@@ -255,6 +256,51 @@ locals: {
   <img class="profile__avatar" src="{{ image }}" alt="{{ name }}'s avatar" />
   <a class="profile__link" href="{{ link }}">more info</a>
 </div>
+```
+
+### Ignored tag
+
+Anything inside this tag will not be parsed, allowing you to output delimiters and anything the plugin would normally parse, in their original form.
+
+```html
+<raw>
+  <if condition="foo === 'bar'">
+    <p>Output {{ foo }} as-is</p>
+  </if>
+</raw>
+```
+
+```html
+<if condition="foo === 'bar'">
+  <p>Output {{ foo }} as-is</p>
+</if>
+```
+
+You can customize the name of the tag:
+
+```js
+var opts = {
+  ignoredTag: 'verbatim', 
+  locals: { foo: 'bar' } }
+}
+
+posthtml(expressions(opts))
+  .process(readFileSync('index.html', 'utf8'))
+  .then((result) => console.log(result.html))
+```
+
+```html
+<verbatim>
+  <if condition="foo === 'bar'">
+    <p>Output {{ foo }} as-is</p>
+  </if>
+</verbatim>
+```
+
+```html
+<if condition="foo === 'bar'">
+  <p>Output {{ foo }} as-is</p>
+</if>
 ```
 
 <h2 align="center">Maintainers</h2>
