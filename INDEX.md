@@ -70,8 +70,8 @@ Expressions Plugin for PostHTML
 **Returns**: <code>Object</code> - tree PostHTML Tree  
 **Requires**: <code>module:vm</code>, <code>module:./tags</code>, <code>module:./loops</code>, <code>module:./escape</code>, <code>module:./backup</code>, <code>module:./placeholders</code>  
 **Version**: 1.0.0  
-**Author:** Jeff Escalante Denis (@jescalan),
-        Malinochkin (mrmlnc),
+**Author**: Jeff Escalante Denis (@jescalan),
+        Denis Malinochkin (mrmlnc),
         Michael Ciniawsky (@michael-ciniawsky)  
 **License**: MIT  
 
