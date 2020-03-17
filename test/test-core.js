@@ -37,7 +37,6 @@ function clean (html) {
   return html.replace(/[^\S\r\n]+$/gm, '').trim()
 }
 
-
 test('Basic', (t) => {
   return process(t, 'basic', { locals: { test: 'wow' } })
 })
@@ -79,5 +78,5 @@ test('Raw output', (t) => {
 })
 
 test('Raw output - custom tag', (t) => {
-  return process(t, 'raw_custom', {ignoredTag: 'verbatim', locals: { foo: 'bar' } })
+  return process(t, 'raw_custom', { ignoredTag: 'verbatim', locals: { foo: 'bar' } })
 })
