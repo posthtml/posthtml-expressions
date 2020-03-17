@@ -37,6 +37,7 @@ function clean (html) {
   return html.replace(/[^\S\r\n]+$/gm, '').trim()
 }
 
+
 test('Basic', (t) => {
   return process(t, 'basic', { locals: { test: 'wow' } })
 })
@@ -67,4 +68,16 @@ test('Expressions - error', (t) => {
   return error('expression_error', (err) => {
     t.is(err.message, 'Invalid or unexpected token')
   })
+})
+
+test('Expressions - ignored', (t) => {
+  return process(t, 'expression_ignored', { locals: { foo: 'bar' } })
+})
+
+test('Raw output', (t) => {
+  return process(t, 'raw', { locals: { foo: 'bar' } })
+})
+
+test('Raw output - custom tag', (t) => {
+  return process(t, 'raw_custom', {ignoredTag: 'verbatim', locals: { foo: 'bar' } })
 })
