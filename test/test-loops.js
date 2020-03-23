@@ -123,7 +123,7 @@ test('Loops - expression error', (t) => {
 
 test('Loops - metadata', (t) => {
   return process(t, 'loop_metadata', {
-    locals: { items: [1, 2, 3]  }
+    locals: { items: [1, 2, 3] }
   })
 })
 
