@@ -120,3 +120,15 @@ test('Loops - expression error', (t) => {
     t.is(err.message, 'Invalid or unexpected token')
   })
 })
+
+test('Loops - metadata', (t) => {
+  return process(t, 'loop_metadata', {
+    locals: { items: [1, 2, 3]  }
+  })
+})
+
+test('Loops - nested metadata', (t) => {
+  return process(t, 'loop_nested_metadata', {
+    locals: { items: { foo: [1, 2], bar: [3, 4] } }
+  })
+})

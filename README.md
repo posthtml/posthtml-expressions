@@ -246,6 +246,29 @@ The value of the `loop` attribute is not a pure expressions evaluation, and it d
 
 So you don't need to declare all the available variables (in this case, the index is skipped), and the expressions after `in` doesn't need to be a local variable, it can be any expressions.
 
+#### Loop meta
+
+Inside a loop, you have access to a special `loop` object, which contains information about the loop currently being executed:
+
+- `loop.index` - the current iteration of the loop (0 indexed)
+- `loop.remaining` - number of iterations until the end (0 indexed)
+- `loop.first` - boolean indicating if it's the first iteration
+- `loop.last` - boolean indicating if it's the last iteration
+- `loop.length` - total number of items
+
+Example:
+
+```html
+<each loop='item in [1,2,3]'>
+  <li>Item value: {{ item }}</li>
+  <li>Current iteration of the loop: {{ loop.index }}</li>
+  <li>Number of iterations until the end: {{ loop.remaining }} </li>
+  <li>This {{ loop.first ? 'is' : 'is not' }} the first iteration</li>
+  <li>This {{ loop.last ? 'is' : 'is not' }} the last iteration</li>
+  <li>Total number of items: {{ loop.length }}</li>
+</each>
+```
+
 ### Scopes
 
 You can replace locals inside certain area wrapped in a `<scope>` tag. For example you can use it after [posthtml-include](https://github.com/posthtml/posthtml-include)

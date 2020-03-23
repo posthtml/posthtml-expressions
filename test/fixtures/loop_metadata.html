@@ -1,0 +1,10 @@
+<ul>
+<each loop='item in items'>
+  <li>Item: {{ item }}</li>
+  <li>Current iteration of the loop: {{ loop.index }}</li>
+  <li>Number of iterations until the end: {{ loop.remaining }} </li>
+  <li>This {{ loop.first ? 'is' : 'is not' }} the first iteration</li>
+  <li>This {{ loop.last ? 'is' : 'is not' }} the last iteration</li>
+  <li>Total number of items: {{ loop.length }}</li>
+</each>
+</ul>
