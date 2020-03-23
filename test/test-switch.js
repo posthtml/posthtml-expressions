@@ -15,7 +15,7 @@ const expect = (file) => {
 }
 
 function process (t, name, options, log = false) {
-  return posthtml([ expressions(options) ])
+  return posthtml([expressions(options)])
     .process(fixture(name))
     .then((result) => {
       log && console.log(result.html)
@@ -28,7 +28,7 @@ function process (t, name, options, log = false) {
 }
 
 function error (name, cb) {
-  return posthtml([ expressions() ])
+  return posthtml([expressions()])
     .process(fixture(name))
     .catch(cb)
 }

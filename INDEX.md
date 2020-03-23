@@ -34,6 +34,9 @@
 <dt><a href="#executeScope">executeScope(scope, locals, node)</a> ⇒ <code>function</code></dt>
 <dd><p>Runs walk function with arbitrary set of local variables</p>
 </dd>
+<dt><a href="#getLoopMeta">getLoopMeta(index, target)</a> ⇒ <code>Object</code></dt>
+<dd><p>Returns an object containing loop metadata</p>
+</dd>
 <dt><a href="#parseLoopStatement">parseLoopStatement(input)</a> ⇒ <code>Object</code></dt>
 <dd><p>Given a &quot;loop&quot; parameter from an &quot;each&quot; tag, parses out the param names and expression to be looped.</p>
 </dd>
@@ -157,6 +160,19 @@ Runs walk function with arbitrary set of local variables
 | scope | <code>Object</code> | Scoped Locals |
 | locals | <code>Object</code> | Locals |
 | node | <code>Object</code> | Node |
+
+<a name="getLoopMeta"></a>
+
+## getLoopMeta(index, target) ⇒ <code>Object</code>
+Returns an object containing loop metadata
+
+**Kind**: global function  
+**Returns**: <code>Object</code> - Object containing loop metadata  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| index | <code>Integer</code> \| <code>Object</code> | Current iteration |
+| target | <code>Object</code> | Object being iterated |
 
 <a name="parseLoopStatement"></a>
 
