@@ -86,7 +86,7 @@ test('Loops - conflicting locals', (t) => {
 
 test('Loops - custom tag', (t) => {
   return process(t, 'loop_customtag', {
-    loopTags: ['zeach'],
+    loopTags: ['for', 'each'],
     locals: { items: [1, 2, 3] }
   })
 })
