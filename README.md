@@ -480,6 +480,12 @@ posthtml(expressions(opts))
       <br>
       <a href="https://github.com/xakdog">Krillin</a>
     </td>
+    <td align="center">
+      <img width="150 height="150"
+      src="https://avatars0.githubusercontent.com/u/1656595?s=150&v=4">
+      <br>
+      <a href="https://github.com/cossssmin">Cosmin Popovici</a>
+    </td>
    </tr>
   <tbody>
 </table>
