@@ -173,6 +173,35 @@ else
   p Foo is probably just foo in the end.
 ```
 
+#### `conditionalTags`
+
+Type: `array`\
+Default: `['if', 'elseif', 'else']`
+
+You can define custom tag names to use for creating a conditional.
+
+Example:
+
+```js
+conditionalTags: ['when', 'elsewhen', 'otherwise']
+```
+
+```html
+<when condition="foo === 'bar'">
+  <p>Foo really is bar! Revolutionary!</p>
+</when>
+
+<elsewhen condition="foo === 'wow'">
+  <p>Foo is wow, oh man.</p>
+</elsewhen>
+
+<otherwise>
+  <p>Foo is probably just foo in the end.</p>
+</otherwise>
+```
+
+Note: tag names must be in the exact order as the default ones.
+
 ### Switch statement
 
 Switch statements act like streamline conditionals. They are useful for when you want to compare a single variable against a series of constants.
@@ -200,6 +229,35 @@ locals: { foo: 'foo' }
 ```
 
 Anything in the `expression` attribute is evaluated directly as an expressions.
+
+#### `switchTags`
+
+Type: `array`\
+Default: `['switch', 'case', 'default']`
+
+You can define custom tag names to use when creating a switch.
+
+Example:
+
+```js
+switchTags: ['clause', 'when', 'fallback']
+```
+
+```html
+<clause expression="foo">
+  <when n="'bar'">
+    <p>Foo really is bar! Revolutionary!</p>
+  </when>
+  <when n="'wow'">
+    <p>Foo is wow, oh man.</p>
+  </when>
+  <fallback>
+    <p>Foo is probably just foo in the end.</p>
+  </fallback>
+</clause>
+```
+
+Note: tag names must be in the exact order as the default ones.
 
 ### Loops
 
@@ -245,6 +303,27 @@ The value of the `loop` attribute is not a pure expressions evaluation, and it d
 ```
 
 So you don't need to declare all the available variables (in this case, the index is skipped), and the expressions after `in` doesn't need to be a local variable, it can be any expressions.
+
+#### `loopTags`
+
+Type: `array`\
+Default: `['each']`
+
+You can define custom tag names to use for creating loops:
+
+Example:
+
+```js
+loopTags: ['each', 'for']
+```
+
+You can now also use the `<for>` tag when writing a loop:
+
+```html
+<for loop="item in [1,2,3]">
+  <p>{{ item }}</p>
+</for>
+```
 
 #### Loop meta
 
@@ -295,6 +374,27 @@ locals: {
   <img class="profile__avatar" src="{{ image }}" alt="{{ name }}'s avatar" />
   <a class="profile__link" href="{{ link }}">more info</a>
 </div>
+```
+
+#### `scopeTags`
+
+Type: `array`\
+Default: `['scope']`
+
+You can define a custom tag name to use for creating scopes:
+
+Example:
+
+```js
+scopeTags: ['context']
+```
+
+You can now also use the `<context>` tag when writing a scope:
+
+```html
+<context with="author">
+  <include src="components/profile.html"></include>
+</context>
 ```
 
 ### Ignored tag
