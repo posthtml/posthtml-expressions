@@ -23,7 +23,7 @@ function process (t, name, options, log = false) {
       return clean(result.html)
     })
     .then((html) => {
-      t.truthy(html === expect(name).trim())
+      t.is(html, expect(name).trim())
     })
 }
 
@@ -75,7 +75,7 @@ test('Switch - dynamic expression', (t) => {
 
 test('Switch - no switch attribute', (t) => {
   return error('switch_no_attr', (err) => {
-    t.truthy(err.toString() === 'Error: the "switch" tag must have a "expression" attribute')
+    t.is(err.toString(), 'Error: the "switch" tag must have a "expression" attribute')
   })
 })
 
