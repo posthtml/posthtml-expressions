@@ -23,7 +23,7 @@ function process (t, name, options, log = false) {
       return clean(result.html)
     })
     .then((html) => {
-      t.truthy(html === expect(name).trim())
+      t.is(html, expect(name).trim())
     })
 }
 
@@ -51,13 +51,13 @@ test('Conditionals - no render', (t) => {
 
 test('Conditionals - "if" tag missing condition', (t) => {
   return error('conditional_if_error', (err) => {
-    t.truthy(err.toString() === 'Error: the "if" tag must have a "condition" attribute')
+    t.is(err.toString(), 'Error: the "if" tag must have a "condition" attribute')
   })
 })
 
 test('Conditionals - "elseif" tag missing condition', (t) => {
   return error('conditional_elseif_error', (err) => {
-    t.truthy(err.toString() === 'Error: the "elseif" tag must have a "condition" attribute')
+    t.is(err.toString(), 'Error: the "elseif" tag must have a "condition" attribute')
   })
 })
 

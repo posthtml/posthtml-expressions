@@ -23,7 +23,7 @@ function process (t, name, options, log = false) {
       return clean(result.html)
     })
     .then((html) => {
-      t.truthy(html === expect(name).trim())
+      t.is(html, expect(name).trim())
     })
 }
 
