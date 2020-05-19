@@ -42,7 +42,7 @@ test('Conditionals', (t) => {
 })
 
 test('Conditionals - only "if" condition', (t) => {
-  return process(t, 'conditional_if', { locals: { foo: 'bar' } })
+  return process(t, 'conditional_if', { locals: { foo: 'bar', bool: '' } })
 })
 
 test('Conditionals - no render', (t) => {
