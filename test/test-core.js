@@ -4,6 +4,7 @@ const join = require('path').join
 const readSync = require('fs').readFileSync
 
 const posthtml = require('posthtml')
+const beautify = require('posthtml-beautify')
 const expressions = require('../lib')
 
 const fixture = (file) => {
@@ -14,8 +15,8 @@ const expect = (file) => {
   return readSync(join(__dirname, 'expect', `${file}.html`), 'utf8')
 }
 
-function process (t, name, options, log = false) {
-  return posthtml([expressions(options)])
+function process (t, name, options, log = false, plugins = [expressions(options)]) {
+  return posthtml(plugins)
     .process(fixture(name))
     .then((result) => {
       log && console.log(result.html)
@@ -79,4 +80,8 @@ test('Raw output', (t) => {
 
 test('Raw output - custom tag', (t) => {
   return process(t, 'raw_custom', { ignoredTag: 'verbatim', locals: { foo: 'bar' } })
+})
+
+test('Boolean attribute', (t) => {
+  return process(t, 'boolean_attr', null, false, [beautify(), expressions()])
 })
