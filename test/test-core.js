@@ -78,6 +78,10 @@ test('Raw output', (t) => {
   return process(t, 'raw', { locals: { foo: 'bar' } })
 })
 
+test.only('Raw output - inside condition', (t) => {
+  return process(t, 'raw_in_condition', { locals: { foo: 'bar' } })
+})
+
 test('Raw output - custom tag', (t) => {
   return process(t, 'raw_custom', { ignoredTag: 'verbatim', locals: { foo: 'bar' } })
 })
