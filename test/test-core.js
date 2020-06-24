@@ -78,7 +78,7 @@ test('Raw output', (t) => {
   return process(t, 'raw', { locals: { foo: 'bar' } })
 })
 
-test.only('Raw output - inside condition', (t) => {
+test('Raw output - inside condition', (t) => {
   return process(t, 'raw_in_condition', { locals: { foo: 'bar' } })
 })
 
