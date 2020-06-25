@@ -1,6 +1,6 @@
 {
   "name": "posthtml-expressions",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Expressions Plugin for PostHTML",
   "engines": {
     "node": ">=10"
@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "standard",
     "test": "nyc ava",
-    "logs": "standard-changelog -i CHANGELOG.md -w",
+    "version": "standard-changelog -i CHANGELOG.md -w",
     "docs": "jsdoc2md lib/*.js > INDEX.md",
     "clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
     "start": "sudo npm run clean && npm run lint && sudo npm test"
@@ -22,8 +22,8 @@
     "coveralls": "^3.1.0",
     "jsdoc-to-markdown": "^6.0.1",
     "nyc": "^15.1.0",
-    "posthtml": "^0.13.0",
-    "posthtml-beautify": "^0.6.0",
+    "posthtml": "^0.13.1",
+    "posthtml-beautify": "^0.7.0",
     "standard": "^14.3.4",
     "standard-changelog": "^2.0.24"
   },

@@ -1,3 +1,12 @@
+## [1.4.3](https://github.com/posthtml/posthtml-expressions/compare/v1.4.2...v1.4.3) (2020-06-25)
+
+
+### Bug Fixes
+
+* clear raw tag after expression, close [#82](https://github.com/posthtml/posthtml-expressions/issues/82) ([2aaef58](https://github.com/posthtml/posthtml-expressions/commit/2aaef5867c0f7971358226f125b288e9de4d021c))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/posthtml/posthtml-expressions/compare/v1.0.0...v1.1.0) (2016-12-14)
 
