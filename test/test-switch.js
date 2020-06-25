@@ -90,3 +90,9 @@ test('Switch - bad flow', (t) => {
     t.is(err.message, 'the "switch" tag can contain only "case" tags and one "default" tag')
   })
 })
+
+test('Switch - raw tag', (t) => {
+  return Promise.all([
+    process(t, 'raw_in_switch', { locals: { country: 'germany', city: 'moscow' } })
+  ])
+})

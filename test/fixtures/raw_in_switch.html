@@ -1,0 +1,17 @@
+<switch expression="country">
+  <case n="'russia'">
+    <p>Hello, from Russia!</p>
+  </case>
+  <default>
+    <raw>Hello from Earth, {{ username }}</raw>
+  </default>
+</switch>
+
+<switch expression="city">
+  <case n="'moscow'">
+    <raw>Hello from Moscow, {{ username }}</raw>
+  </case>
+  <default>
+    <p>Hello, from Earth!</p>
+  </default>
+</switch>
