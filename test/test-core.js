@@ -54,8 +54,8 @@ test('Unescaped', (t) => {
 
 test('Delimiters', (t) => {
   return process(t, 'custom_delimiters', {
-    delimiters: ['{%', '%}'],
-    unescapeDelimiters: ['{{%', '%}}'],
+    delimiters: ['%[', ']%'],
+    unescapeDelimiters: ['%[[', ']]%'],
     locals: { test: 'wow' }
   })
 })
