@@ -1,3 +1,12 @@
+## [1.4.4](https://github.com/posthtml/posthtml-expressions/compare/v1.4.3...v1.4.4) (2020-06-30)
+
+
+### Bug Fixes
+
+* escape custom delimiters when ignoring expressions ([53c901e](https://github.com/posthtml/posthtml-expressions/commit/53c901eb8d58e4c1d259db9963bd6817efc11ea2))
+
+
+
 ## [1.4.3](https://github.com/posthtml/posthtml-expressions/compare/v1.4.2...v1.4.3) (2020-06-25)
 
 
