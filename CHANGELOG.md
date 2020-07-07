@@ -1,3 +1,12 @@
+## [1.4.5](https://github.com/posthtml/posthtml-expressions/compare/v1.4.4...v1.4.5) (2020-07-07)
+
+
+### Bug Fixes
+
+* normalize output tree, close [#93](https://github.com/posthtml/posthtml-expressions/issues/93) ([5d820e5](https://github.com/posthtml/posthtml-expressions/commit/5d820e59e0f745444015220937d3e3321071249e))
+
+
+
 ## [1.4.4](https://github.com/posthtml/posthtml-expressions/compare/v1.4.3...v1.4.4) (2020-06-30)
 
 
