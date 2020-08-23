@@ -1,3 +1,12 @@
+## [1.4.6](https://github.com/posthtml/posthtml-expressions/compare/v1.4.5...v1.4.6) (2020-08-23)
+
+
+### Bug Fixes
+
+* remove node text after condition, close [#62](https://github.com/posthtml/posthtml-expressions/issues/62) ([2cefe7d](https://github.com/posthtml/posthtml-expressions/commit/2cefe7dac40b61e82752c7f03b91296870474194))
+
+
+
 ## [1.4.5](https://github.com/posthtml/posthtml-expressions/compare/v1.4.4...v1.4.5) (2020-07-07)
 
 
