@@ -12,7 +12,7 @@
     "version": "standard-changelog -i CHANGELOG.md -w",
     "docs": "jsdoc2md lib/*.js > INDEX.md",
     "clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
-    "start": "sudo npm run clean && npm run lint && sudo npm test"
+    "start": "npm run clean && npm run lint && npm test"
   },
   "dependencies": {
     "fclone": "^1.0.11",
