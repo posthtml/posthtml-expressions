@@ -1,3 +1,12 @@
+## [1.4.7](https://github.com/posthtml/posthtml-expressions/compare/v1.4.6...v1.4.7) (2020-08-28)
+
+
+### Bug Fixes
+
+* options for parser when nnormalize, close [#97](https://github.com/posthtml/posthtml-expressions/issues/97) ([99c0281](https://github.com/posthtml/posthtml-expressions/commit/99c02815facfcb692d52f37b3d80ad882f4756fb))
+
+
+
 ## [1.4.6](https://github.com/posthtml/posthtml-expressions/compare/v1.4.5...v1.4.6) (2020-08-23)
 
 
