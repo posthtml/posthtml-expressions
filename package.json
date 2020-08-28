@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "standard",
     "test": "nyc ava --timeout=1m",
-    "version": "standard-changelog -i CHANGELOG.md -w",
+    "version": "standard-changelog -i CHANGELOG.md -w && git add CHANGELOG.md && git commit -m \"build: update changelog\"",
     "docs": "jsdoc2md lib/*.js > INDEX.md",
     "clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
     "start": "npm run clean && npm run lint && npm test"
