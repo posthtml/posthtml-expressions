@@ -15,9 +15,9 @@ const expect = (file) => {
   return readSync(join(__dirname, 'expect', `${file}.html`), 'utf8')
 }
 
-function process (t, name, options, log = false, plugins = [expressions(options)]) {
+function process (t, name, options, log = false, plugins = [expressions(options)], processOptions = {}) {
   return posthtml(plugins)
-    .process(fixture(name))
+    .process(fixture(name), processOptions)
     .then((result) => {
       log && console.log(result.html)
 
@@ -88,4 +88,14 @@ test('Raw output - custom tag', (t) => {
 
 test('Boolean attribute', (t) => {
   return process(t, 'boolean_attr', null, false, [beautify(), expressions()])
+})
+
+test('Directives options', (t) => {
+  return process(t, 'directives', null, false, [expressions()], {
+    directives: [{
+      name: '?php',
+      start: '<',
+      end: '>',
+    }]
+  })
 })

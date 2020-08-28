@@ -1,6 +1,6 @@
 {
   "name": "posthtml-expressions",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Expressions Plugin for PostHTML",
   "engines": {
     "node": ">=10"
@@ -8,11 +8,11 @@
   "main": "lib",
   "scripts": {
     "lint": "standard",
-    "test": "nyc ava",
-    "version": "standard-changelog -i CHANGELOG.md -w",
+    "test": "nyc ava --timeout=1m",
+    "version": "standard-changelog -i CHANGELOG.md -w && git add CHANGELOG.md && git commit -m \"build: update changelog\"",
     "docs": "jsdoc2md lib/*.js > INDEX.md",
     "clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
-    "start": "sudo npm run clean && npm run lint && sudo npm test"
+    "start": "npm run clean && npm run lint && npm test"
   },
   "dependencies": {
     "fclone": "^1.0.11",
