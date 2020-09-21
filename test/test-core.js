@@ -91,7 +91,7 @@ test('Boolean attribute', (t) => {
 })
 
 test('Attribute as param', (t) => {
-  return process(t, 'attr_param', null, false, [beautify(), expressions({locals: { param: 'checked' }})])
+  return process(t, 'attr_param', null, false, [beautify(), expressions({ locals: { param: 'checked' } })])
 })
 
 test('Directives options', (t) => {
@@ -99,7 +99,7 @@ test('Directives options', (t) => {
     directives: [{
       name: '?php',
       start: '<',
-      end: '>',
+      end: '>'
     }]
   })
 })
