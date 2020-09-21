@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/posthtml/posthtml-expressions/compare/v1.4.7...v1.5.0) (2020-09-21)
+
+
+### Features
+
+* attribute as param, close [#99](https://github.com/posthtml/posthtml-expressions/issues/99) ([74c2b32](https://github.com/posthtml/posthtml-expressions/commit/74c2b3201f1492c4115e0e4b8f71e228f0e70370))
+
+
+
 ## [1.4.7](https://github.com/posthtml/posthtml-expressions/compare/v1.4.6...v1.4.7) (2020-08-28)
 
 
