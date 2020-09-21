@@ -90,6 +90,10 @@ test('Boolean attribute', (t) => {
   return process(t, 'boolean_attr', null, false, [beautify(), expressions()])
 })
 
+test('Attribute as param', (t) => {
+  return process(t, 'attr_param', null, false, [beautify(), expressions({locals: { param: 'checked' }})])
+})
+
 test('Directives options', (t) => {
   return process(t, 'directives', null, false, [expressions()], {
     directives: [{
