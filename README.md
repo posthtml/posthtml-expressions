@@ -53,17 +53,19 @@ You have full control over the delimiters used for injecting locals, as well as 
 You can inject locals into any piece of content in your html templates, other than overwriting tag names. For example, if you passed the following config to the expressions plugin:
 
 ```js
-locals: { className: 'intro', name: 'Marlo' }
+locals: { className: 'intro', name: 'Marlo', 'status': 'checked' }
 ```
 
 ```html
 <div class="{{ className }}">
+  <input type="radio" {{ status }}>
   My name is {{ name }}
 </div>
 ```
 
 ```html
 <div class="intro">
+  <input type="radio" checked="">
   My name is Marlo
 </div>
 ```
