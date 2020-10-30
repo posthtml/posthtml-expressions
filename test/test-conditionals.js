@@ -27,8 +27,8 @@ function process (t, name, options, log = false) {
     })
 }
 
-function error (name, cb) {
-  return posthtml([expressions()])
+function error (name, cb, options) {
+  return posthtml([expressions(options)])
     .process(fixture(name))
     .catch(cb)
 }
@@ -73,6 +73,10 @@ test('conditional - expression error', (t) => {
   return error('conditional_expression_error', (err) => {
     t.is(err.name, 'SyntaxError')
   })
+})
+
+test('Conditionals - if key exists in locals', (t) => {
+  return process(t, 'conditional_if_key_not_exists', { strictMode: false })
 })
 
 test('Conditionals - custom tags', (t) => {
