@@ -8,11 +8,9 @@
   "main": "lib",
   "scripts": {
     "lint": "standard",
-    "test": "nyc ava --timeout=1m",
-    "version": "standard-changelog -i CHANGELOG.md -w && git add CHANGELOG.md && git commit -m \"build: update changelog\"",
-    "docs": "jsdoc2md lib/*.js > INDEX.md",
-    "clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
-    "start": "npm run clean && npm run lint && npm test"
+    "test": "npm run lint && nyc ava --timeout=1m",
+    "version": "standard-changelog -i CHANGELOG.md -w && git add changelog.md",
+    "docs": "jsdoc2md lib/*.js > INDEX.md"
   },
   "dependencies": {
     "fclone": "^1.0.11",
@@ -21,7 +19,6 @@
   },
   "devDependencies": {
     "ava": "^3.13.0",
-    "coveralls": "^3.1.0",
     "jsdoc-to-markdown": "^6.0.1",
     "nyc": "^15.1.0",
     "posthtml": "^0.13.4",
@@ -30,8 +27,7 @@
     "standard-changelog": "^2.0.24"
   },
   "files": [
-    "lib",
-    "LICENSE"
+    "lib"
   ],
   "keywords": [
     "expressions",
