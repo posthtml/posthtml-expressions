@@ -47,6 +47,7 @@ You have full control over the delimiters used for injecting locals, as well as 
 | **loopTags** | `['each']` | Array containing names for `for` loops |
 | **scopeTags** | `['scope']` | Array containing names for scopes |
 | **ignoredTag** | `'raw'` | String containing name of tag inside which parsing is disabled |
+| **strictMode** | `true` | Boolean value set to `false` will not throw an exception |
 
 ### Locals
 

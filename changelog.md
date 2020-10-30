@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/posthtml/posthtml-expressions/compare/v1.5.0...v1.6.0) (2020-10-30)
+
+
+### Features
+
+* strictMode show or not throw an exception, close [#102](https://github.com/posthtml/posthtml-expressions/issues/102) ([dbb32c9](https://github.com/posthtml/posthtml-expressions/commit/dbb32c9a9cd0c3b6468547ecea1d1d492e0ac7ce))
+
+
+
 # [1.5.0](https://github.com/posthtml/posthtml-expressions/compare/v1.4.7...v1.5.0) (2020-09-21)
 
 
