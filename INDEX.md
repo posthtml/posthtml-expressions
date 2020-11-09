@@ -43,7 +43,7 @@
 <dt><a href="#escapeHTML">escapeHTML(unescaped)</a> ⇒ <code>String</code></dt>
 <dd><p>Escape HTML characters with their respective entities</p>
 </dd>
-<dt><a href="#placeholders">placeholders(input, ctx, settings)</a> ⇒ <code>String</code></dt>
+<dt><a href="#placeholders">placeholders(input, ctx, settings, opts)</a> ⇒ <code>String</code></dt>
 <dd><p>Replace Expressions</p>
 </dd>
 <dt><a href="#getNextTag">getNextTag(nodes, i)</a> ⇒ <code>Array</code></dt>
@@ -200,7 +200,7 @@ Escape HTML characters with their respective entities
 
 <a name="placeholders"></a>
 
-## placeholders(input, ctx, settings) ⇒ <code>String</code>
+## placeholders(input, ctx, settings, opts) ⇒ <code>String</code>
 Replace Expressions
 
 **Kind**: global function  
@@ -211,6 +211,7 @@ Replace Expressions
 | input | <code>String</code> | Input |
 | ctx | <code>Object</code> | Context |
 | settings | <code>Array</code> | Settings |
+| opts | <code>Array</code> | Options |
 
 <a name="getNextTag"></a>
 
