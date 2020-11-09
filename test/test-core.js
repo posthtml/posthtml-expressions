@@ -66,7 +66,7 @@ test('Expressions - spacing', (t) => {
 
 test('Expressions - error', (t) => {
   return error('expression_error', (err) => {
-    t.is(err.message, 'Invalid or unexpected token')
+    t.is(err.message, 'SyntaxError: Invalid or unexpected token')
   })
 })
 
