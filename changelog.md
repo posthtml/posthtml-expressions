@@ -1,3 +1,12 @@
+## [1.6.1](https://github.com/posthtml/posthtml-expressions/compare/v1.6.0...v1.6.1) (2020-11-09)
+
+
+### Bug Fixes
+
+* check if key exists in locals as text, close [#102](https://github.com/posthtml/posthtml-expressions/issues/102) ([1d7596a](https://github.com/posthtml/posthtml-expressions/commit/1d7596a8a4d12fd29a74f03637057772a9b81d09))
+
+
+
 # [1.6.0](https://github.com/posthtml/posthtml-expressions/compare/v1.5.0...v1.6.0) (2020-10-30)
 
 

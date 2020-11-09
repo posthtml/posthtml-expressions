@@ -1,6 +1,6 @@
 {
   "name": "posthtml-expressions",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Expressions Plugin for PostHTML",
   "engines": {
     "node": ">=10"
