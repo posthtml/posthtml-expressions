@@ -1,6 +1,6 @@
 {
   "name": "posthtml-expressions",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Expressions Plugin for PostHTML",
   "engines": {
     "node": ">=10"
@@ -23,8 +23,8 @@
     "nyc": "^15.1.0",
     "posthtml": "^0.13.4",
     "posthtml-beautify": "^0.7.0",
-    "standard": "^16.0.0",
-    "standard-changelog": "^2.0.24"
+    "standard": "^16.0.2",
+    "standard-changelog": "^2.0.27"
   },
   "files": [
     "lib"

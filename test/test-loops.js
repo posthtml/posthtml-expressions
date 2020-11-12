@@ -117,7 +117,7 @@ test('Loops - no "in" keyword', (t) => {
 
 test('Loops - expression error', (t) => {
   return error('loop_expression_error', (err) => {
-    t.is(err.message, 'Invalid or unexpected token')
+    t.is(err.message, 'SyntaxError: Invalid or unexpected token')
   })
 })
 

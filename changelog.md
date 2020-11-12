@@ -1,3 +1,12 @@
+## [1.6.2](https://github.com/posthtml/posthtml-expressions/compare/v1.6.1...v1.6.2) (2020-11-12)
+
+
+### Bug Fixes
+
+* items is not defined in each, close [#107](https://github.com/posthtml/posthtml-expressions/issues/107) ([d14fbbb](https://github.com/posthtml/posthtml-expressions/commit/d14fbbb683460fad4f8b2edb649f9ef759b89038))
+
+
+
 ## [1.6.1](https://github.com/posthtml/posthtml-expressions/compare/v1.6.0...v1.6.1) (2020-11-09)
 
 
