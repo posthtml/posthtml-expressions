@@ -6,3 +6,9 @@
   {{ key_not_exists.foo }}
   it works!
 </if>
+
+<if condition="items && items.length > 0">
+  <each loop="item, key in items">
+    {{ item.text }}
+  </each>
+</if>
