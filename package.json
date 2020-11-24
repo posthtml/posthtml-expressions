@@ -14,14 +14,14 @@
   },
   "dependencies": {
     "fclone": "^1.0.11",
-    "posthtml-parser": "^0.5.2",
-    "posthtml-render": "^1.2.3"
+    "posthtml-parser": "^0.6.0",
+    "posthtml-render": "^1.4.0"
   },
   "devDependencies": {
     "ava": "^3.13.0",
     "jsdoc-to-markdown": "^6.0.1",
     "nyc": "^15.1.0",
-    "posthtml": "^0.13.4",
+    "posthtml": "^0.15.0",
     "posthtml-beautify": "^0.7.0",
     "standard": "^16.0.2",
     "standard-changelog": "^2.0.27"
