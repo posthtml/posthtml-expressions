@@ -27,10 +27,11 @@ function process (t, name, options, log = false) {
     })
 }
 
-function error (name, cb) {
-  return posthtml([expressions()])
+function error (name, cbErr, cbSuccess, pluginOptions) {
+  return posthtml([expressions(pluginOptions)])
     .process(fixture(name))
-    .catch(cb)
+    .then(cbSuccess)
+    .catch(cbErr)
 }
 
 function clean (html) {
@@ -99,8 +100,14 @@ test('Loops - no loop attribute', (t) => {
 
 test('Loops - no array or object passed', (t) => {
   return error('loop_no_collection', (err) => {
-    t.truthy(err.toString() === 'Error: You must provide an array or object to loop through')
+    t.is(err.toString(), 'Error: You must provide an array or object to loop through')
   })
+})
+
+test('Loops - no array or object passed with disabled strict mode', (t) => {
+  return error('loop_no_collection', () => {}, (response) => {
+    t.truthy(response)
+  }, { strictMode: false })
 })
 
 test('Loops - no loop arguments', (t) => {
