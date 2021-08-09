@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "fclone": "^1.0.11",
+    "posthtml-match-helper": "^1.0.1",
     "posthtml-parser": "^0.10.0",
     "posthtml-render": "^3.0.0"
   },
