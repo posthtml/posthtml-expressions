@@ -42,6 +42,7 @@ You have full control over the delimiters used for injecting locals, as well as 
 | **delimiters** | `['{{', '}}']` | Array containing beginning and ending delimiters for escaped locals |
 | **unescapeDelimiters** | `['{{{', '}}}']` | Array containing beginning and ending delimiters for unescaped locals |
 | **locals** | `{}` | Object containing any local variables you want to be available inside your expressions |
+| **localsAttr** | `locals` | Attribute name for the tag `script` which contains ***[locals](#locals)***|
 | **conditionalTags** | `['if', 'elseif', 'else']` | Array containing names for tags used for `if/else if/else` statements |
 | **switchTags** | `['switch', 'case', 'default']` | Array containing names for tags used for `switch/case/default` statements |
 | **loopTags** | `['each']` | Array containing names for `for` loops |
@@ -69,6 +70,28 @@ locals: { className: 'intro', name: 'Marlo', 'status': 'checked' }
   <input type="radio" checked="">
   My name is Marlo
 </div>
+```
+
+You can also use the script tag with the attribute `locals` or you custome attribute containing data to interpolate in the template.
+
+```html
+<script locals>
+  module.exports = {
+    name: 'Scrum'
+  }
+</script>
+
+<div>My name: {{name}}</div>
+```
+
+```html
+<script locals>
+  module.exports = {
+    name: 'Scrum'
+  }
+</script>
+
+<div>My name: Scrum</div>
 ```
 
 ### Unescaped Locals
