@@ -1,10 +1,8 @@
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
-[![deps][deps]][deps-url]
 [![tests][tests]][tests-url]
 [![coverage][cover]][cover-url]
 [![code style][style]][style-url]
-[![chat][chat]][chat-url]
 
 <div align="center">
   <img width="110" height="100" title="PostHTML Plugin" vspace="50" src="http://michael-ciniawsky.github.io/postcss-load-plugins/logo.svg">
@@ -526,14 +524,11 @@ posthtml(expressions(opts))
 [deps]: https://david-dm.org/posthtml/posthtml-expressions.svg
 [deps-url]: https://david-dm.org/posthtml/posthtml-expressions
 
-[tests]: http://img.shields.io/travis/posthtml/posthtml-expressions.svg
-[tests-url]: https://travis-ci.org/posthtml/posthtml-expressions
+[tests]: https://github.com/posthtml/posthtml-expressions/workflows/Actions%20Status/badge.svg?style=flat-square
+[tests-url]: https://github.com/posthtml/posthtml-expressions/actions?query=workflow%3A%22CI+tests%22
 
 [cover]: https://coveralls.io/repos/github/posthtml/posthtml-expressions/badge.svg
 [cover-url]: https://coveralls.io/github/posthtml/posthtml-expressions
 
 [style]: https://img.shields.io/badge/code%20style-standard-yellow.svg
 [style-url]: http://standardjs.com/
-
-[chat]: https://badges.gitter.im/posthtml/posthtml.svg
-[chat-url]: https://gitter.im/posthtml/posthtml?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"
