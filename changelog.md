@@ -1,3 +1,18 @@
+# [1.8.0](https://github.com/posthtml/posthtml-expressions/compare/v1.7.1...v1.8.0) (2021-08-09)
+
+
+### Bug Fixes
+
+* after update parser/render ([e0bafbe](https://github.com/posthtml/posthtml-expressions/commit/e0bafbeec23b18ae59c40c43dd132fc01bfbc73d))
+* lost posthtml-match-helper ([350c3fd](https://github.com/posthtml/posthtml-expressions/commit/350c3fdf167ee638deb9b3c5cf5ffc98527406b8))
+
+
+### Features
+
+* locals data from script tag, close [#117](https://github.com/posthtml/posthtml-expressions/issues/117) ([e730454](https://github.com/posthtml/posthtml-expressions/commit/e73045458dc90afdb4046a93c394d75800818b8d))
+
+
+
 ## [1.7.1](https://github.com/posthtml/posthtml-expressions/compare/v1.7.0...v1.7.1) (2020-12-02)
 
 

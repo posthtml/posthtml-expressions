@@ -1,10 +1,8 @@
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
-[![deps][deps]][deps-url]
 [![tests][tests]][tests-url]
 [![coverage][cover]][cover-url]
 [![code style][style]][style-url]
-[![chat][chat]][chat-url]
 
 <div align="center">
   <img width="110" height="100" title="PostHTML Plugin" vspace="50" src="http://michael-ciniawsky.github.io/postcss-load-plugins/logo.svg">
@@ -42,6 +40,7 @@ You have full control over the delimiters used for injecting locals, as well as 
 | **delimiters** | `['{{', '}}']` | Array containing beginning and ending delimiters for escaped locals |
 | **unescapeDelimiters** | `['{{{', '}}}']` | Array containing beginning and ending delimiters for unescaped locals |
 | **locals** | `{}` | Object containing any local variables you want to be available inside your expressions |
+| **localsAttr** | `locals` | Attribute name for the tag `script` which contains ***[locals](#locals)***|
 | **conditionalTags** | `['if', 'elseif', 'else']` | Array containing names for tags used for `if/else if/else` statements |
 | **switchTags** | `['switch', 'case', 'default']` | Array containing names for tags used for `switch/case/default` statements |
 | **loopTags** | `['each']` | Array containing names for `for` loops |
@@ -69,6 +68,28 @@ locals: { className: 'intro', name: 'Marlo', 'status': 'checked' }
   <input type="radio" checked="">
   My name is Marlo
 </div>
+```
+
+You can also use the script tag with the attribute `locals` or you custome attribute containing data to interpolate in the template.
+
+```html
+<script locals>
+  module.exports = {
+    name: 'Scrum'
+  }
+</script>
+
+<div>My name: {{name}}</div>
+```
+
+```html
+<script locals>
+  module.exports = {
+    name: 'Scrum'
+  }
+</script>
+
+<div>My name: Scrum</div>
 ```
 
 ### Unescaped Locals
@@ -503,14 +524,11 @@ posthtml(expressions(opts))
 [deps]: https://david-dm.org/posthtml/posthtml-expressions.svg
 [deps-url]: https://david-dm.org/posthtml/posthtml-expressions
 
-[tests]: http://img.shields.io/travis/posthtml/posthtml-expressions.svg
-[tests-url]: https://travis-ci.org/posthtml/posthtml-expressions
+[tests]: https://github.com/posthtml/posthtml-expressions/workflows/Actions%20Status/badge.svg?style=flat-square
+[tests-url]: https://github.com/posthtml/posthtml-expressions/actions?query=workflow%3A%22CI+tests%22
 
 [cover]: https://coveralls.io/repos/github/posthtml/posthtml-expressions/badge.svg
 [cover-url]: https://coveralls.io/github/posthtml/posthtml-expressions
 
 [style]: https://img.shields.io/badge/code%20style-standard-yellow.svg
 [style-url]: http://standardjs.com/
-
-[chat]: https://badges.gitter.im/posthtml/posthtml.svg
-[chat-url]: https://gitter.im/posthtml/posthtml?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"
