@@ -1,3 +1,12 @@
+## [1.8.1](https://github.com/posthtml/posthtml-expressions/compare/v1.8.0...v1.8.1) (2021-08-10)
+
+
+### Bug Fixes
+
+* tree.match is not a function ([bee5368](https://github.com/posthtml/posthtml-expressions/commit/bee5368149d7f1258833656f91355e1266f6ee4d))
+
+
+
 # [1.8.0](https://github.com/posthtml/posthtml-expressions/compare/v1.7.1...v1.8.0) (2021-08-09)
 
 
