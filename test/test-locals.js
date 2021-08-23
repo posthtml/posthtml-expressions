@@ -34,3 +34,7 @@ function clean (html) {
 test('Basic', (t) => {
   return process(t, 'script-locals')
 })
+
+test('Remove script locals', (t) => {
+  return process(t, 'script-locals-remove', { removeScriptLocals: true })
+})
