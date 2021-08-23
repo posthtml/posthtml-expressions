@@ -41,6 +41,7 @@ You have full control over the delimiters used for injecting locals, as well as 
 | **unescapeDelimiters** | `['{{{', '}}}']` | Array containing beginning and ending delimiters for unescaped locals |
 | **locals** | `{}` | Object containing any local variables you want to be available inside your expressions |
 | **localsAttr** | `locals` | Attribute name for the tag `script` which contains ***[locals](#locals)***|
+| **removeScriptLocals** | `false` | Will remove tag `script` which contains ***[locals](#locals)***|
 | **conditionalTags** | `['if', 'elseif', 'else']` | Array containing names for tags used for `if/else if/else` statements |
 | **switchTags** | `['switch', 'case', 'default']` | Array containing names for tags used for `switch/case/default` statements |
 | **loopTags** | `['each']` | Array containing names for `for` loops |

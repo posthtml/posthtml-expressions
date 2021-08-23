@@ -1,3 +1,17 @@
+# [1.9.0](https://github.com/posthtml/posthtml-expressions/compare/v1.8.1...v1.9.0) (2021-08-23)
+
+
+### Features
+
+* remove script locals, close [#120](https://github.com/posthtml/posthtml-expressions/issues/120) ([023fcb9](https://github.com/posthtml/posthtml-expressions/commit/023fcb9845939524265589d5b59741e41ea73aa4))
+
+
+### Performance Improvements
+
+* default locals attr ([73dc216](https://github.com/posthtml/posthtml-expressions/commit/73dc216c2adae6de9582c1c65a83d460df836f0a))
+
+
+
 ## [1.8.1](https://github.com/posthtml/posthtml-expressions/compare/v1.8.0...v1.8.1) (2021-08-10)
 
 
