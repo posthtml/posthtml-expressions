@@ -93,6 +93,38 @@ You can also use the script tag with the attribute `locals` or you custome attri
 <div>My name: Scrum</div>
 ```
 
+In addition, the use of script tag allow you to use `locals` defined globally to assign data to variables.
+
+```js
+posthtml(expressions({ locals: { foo: 'bar' } }))
+  .process(readFileSync('index.html', 'utf8'))
+  .then((result) => console.log(result.html))
+```
+
+```html
+<script locals>
+  module.exports = {
+    name: 'Scrum',
+    foo: locals.foo || 'empty'
+  }
+</script>
+
+<div>My name: {{name}}</div>
+<div>Foo: {{foo}}</div>
+```
+
+```html
+<script locals>
+  module.exports = {
+    name: 'Scrum',
+    foo: locals.foo || 'empty'
+  }
+</script>
+
+<div>My name: {{name}}</div>
+<div>Foo: bar</div>
+```
+
 ### Unescaped Locals
 
 By default, special characters will be escaped so that they show up as text, rather than html code. For example, if you had a local containing valid html as such:
@@ -444,7 +476,7 @@ You can customize the name of the tag:
 
 ```js
 var opts = {
-  ignoredTag: 'verbatim', 
+  ignoredTag: 'verbatim',
   locals: { foo: 'bar' } }
 }
 

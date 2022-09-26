@@ -35,6 +35,14 @@ test('Basic', (t) => {
   return process(t, 'script-locals')
 })
 
+test('Global Locals - setting global locals', (t) => {
+  return process(t, 'script-locals-global', { locals: { displayAge: true } })
+})
+
+test('Global Locals - no global locals informed', (t) => {
+  return process(t, 'script-locals-global-not-informed')
+})
+
 test('Remove script locals', (t) => {
   return process(t, 'script-locals-remove', { removeScriptLocals: true })
 })
