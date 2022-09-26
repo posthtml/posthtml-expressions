@@ -1,3 +1,12 @@
+# [1.10.0](https://github.com/posthtml/posthtml-expressions/compare/v1.9.0...v1.10.0) (2022-09-26)
+
+
+### Features
+
+* allow global script locals ([a5678f5](https://github.com/posthtml/posthtml-expressions/commit/a5678f5b37082b26b5f23d7ec43de4f0e3b3ec5c))
+
+
+
 # [1.9.0](https://github.com/posthtml/posthtml-expressions/compare/v1.8.1...v1.9.0) (2021-08-23)
 
 
