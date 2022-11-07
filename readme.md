@@ -126,14 +126,22 @@ posthtml(expressions({ locals: { foo: 'bar' } }))
 <div>Foo: bar</div>
 ```
 #### Missing locals
-What to produce in case of referencing a value not in locals can be configured by the `missingLocal` and `strictMode` options
+What to produce in case of referencing a value not in `locals` can be configured by the `missingLocal` and `strictMode` options.
+
+When `strictMode` is true (default) and leaving the `missingLocal` option `undefined`, then "'foo' is not defined" exception is thrown.
+
+Setting `strictMode` false and leaving the `missingLocal` option `undefined` results the string `undefined` in the output
+
+Setting the option `missingLocal` to a string will produce that string in the output regardless the value of option `strictMode`. `missingLocal` can contain the placeholder `{local}` which will be replaced with the name of the missing local in the output. This solution allows to:
+1. Silently ignore missing locals by setting `missingLocal` to `""`
+2. Include the name of the missing local in the output to help detect the which value is missing in `locals` like "#Missing value: {local}"
 
 |`missingLocal`|`strictMode`|output|
 |:----:|:-----:|:----------|
 | `undefined` (default) | `true` (default) | Error is thrown |
 | `undefined` (default) | `false` | 'undefined' |
 | `''` | `false`/`true` | `''` (not output)
-| `{expression}` | `false`/`true` | [original local] like {{foo}}
+| `{local}` | `false`/`true` | original reference like `{{foo}}`
 
 ### Unescaped Locals
 

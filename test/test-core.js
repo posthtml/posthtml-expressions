@@ -115,13 +115,13 @@ test('local - missing - undefined', (t) => {
 })
 
 test('local - missing - keep', (t) => {
-  return process(t, 'local_missing_keep', { missingLocal: '{expression}' })
+  return process(t, 'local_missing_keep', { missingLocal: '{local}' })
 })
 
 test('local - missing - keep / strictMode:false', (t) => {
-  return process(t, 'local_missing_keep', { missingLocal: '{expression}', strictMode: false })
+  return process(t, 'local_missing_keep', { missingLocal: '{local}', strictMode: false })
 })
 
 test('local - missing - replace', (t) => {
-  return process(t, 'local_missing_replace', { missingLocal: 'Error: {expression} undefined' })
+  return process(t, 'local_missing_replace', { missingLocal: 'Error: {local} undefined' })
 })
