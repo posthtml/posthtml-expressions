@@ -37,17 +37,18 @@ You have full control over the delimiters used for injecting locals, as well as 
 
 |Option|Default|Description|
 |:----:|:-----:|:----------|
-| **delimiters** | `['{{', '}}']` | Array containing beginning and ending delimiters for escaped locals |
-| **unescapeDelimiters** | `['{{{', '}}}']` | Array containing beginning and ending delimiters for unescaped locals |
-| **locals** | `{}` | Object containing any local variables you want to be available inside your expressions |
+| **delimiters** | `['{{', '}}']` | Array containing beginning and ending delimiters for escaped locals os [expressions](#expressions) |
+| [**unescapeDelimiters**](#unescaped-locals) | `['{{{', '}}}']` | Array containing beginning and ending delimiters for unescaped locals |
+| [**locals**](#locals) | `{}` | Object containing any local variables you want to be available inside your expressions |
 | **localsAttr** | `locals` | Attribute name for the tag `script` which contains ***[locals](#locals)***|
 | **removeScriptLocals** | `false` | Will remove tag `script` which contains ***[locals](#locals)***|
-| **conditionalTags** | `['if', 'elseif', 'else']` | Array containing names for tags used for `if/else if/else` statements |
-| **switchTags** | `['switch', 'case', 'default']` | Array containing names for tags used for `switch/case/default` statements |
+| [**conditionalTags**](#conditionals) | `['if', 'elseif', 'else']` | Array containing names for tags used for [*`if/else` statements*](#conditionals) |
+| [**switchTags**](#switchtags) | `['switch', 'case', 'default']` | Array containing names for tags used for [*`switch/case/default` statements*](#switch-statement) |
 | **loopTags** | `['each']` | Array containing names for `for` loops |
 | **scopeTags** | `['scope']` | Array containing names for scopes |
-| **ignoredTag** | `'raw'` | String containing name of tag inside which parsing is disabled |
-| **strictMode** | `true` | Boolean value set to `false` will not throw an exception |
+| [**ignoredTag**](#ignored-tag) | `'raw'` | String containing name of tag inside which parsing is disabled |
+| **strictMode** | `true` | Boolean value set to `false` will not throw an exception if a value in locals not found or expression could not be evaluated|
+| [**missingLocal**](#missing-locals) | `undefined` | string defining the replacement value in case value not found in locals. May contain `{expression}` placeholder|
 
 ### Locals
 
@@ -124,6 +125,15 @@ posthtml(expressions({ locals: { foo: 'bar' } }))
 <div>My name: {{name}}</div>
 <div>Foo: bar</div>
 ```
+#### Missing locals
+What to produce in case of referencing a value not in locals can be configured by the `missingLocal` and `strictMode` options
+
+|`missingLocal`|`strictMode`|output|
+|:----:|:-----:|:----------|
+| `undefined` (default) | `true` (default) | Error is thrown |
+| `undefined` (default) | `false` | 'undefined' |
+| `''` | `false`/`true` | `''` (not output)
+| `{expression}` | `false`/`true` | [original local] like {{foo}}
 
 ### Unescaped Locals
 
