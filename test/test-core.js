@@ -28,8 +28,8 @@ function process (t, name, options, log = false, plugins = [expressions(options)
     })
 }
 
-function error (name, cb) {
-  return posthtml([expressions()])
+function error (name, cb, opts) {
+  return posthtml([expressions(opts)])
     .process(fixture(name))
     .catch(cb)
 }
@@ -102,4 +102,26 @@ test('Directives options', (t) => {
       end: '>'
     }]
   })
+})
+
+test('local - missing - error', (t) => {
+  return error('local_missing', (err) => {
+    t.is(err.message, "'foo' is not defined")
+  })
+})
+
+test('local - missing - undefined', (t) => {
+  return process(t, 'local_missing', { strictMode: false })
+})
+
+test('local - missing - keep', (t) => {
+  return process(t, 'local_missing_keep', { missingLocal: '{local}' })
+})
+
+test('local - missing - keep / strictMode:false', (t) => {
+  return process(t, 'local_missing_keep', { missingLocal: '{local}', strictMode: false })
+})
+
+test('local - missing - replace', (t) => {
+  return process(t, 'local_missing_replace', { missingLocal: 'Error: {local} undefined' })
 })
