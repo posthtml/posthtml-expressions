@@ -1,3 +1,7 @@
+# [1.11.0](https://github.com/posthtml/posthtml-expressions/compare/v1.10.0...v1.11.0) (2022-12-20)
+
+
+
 # [1.10.0](https://github.com/posthtml/posthtml-expressions/compare/v1.9.0...v1.10.0) (2022-09-26)
 
 
