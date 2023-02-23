@@ -139,3 +139,7 @@ test('Loops - nested metadata', (t) => {
     locals: { items: { foo: [1, 2], bar: [3, 4] } }
   })
 })
+
+test.only('Loop inline', (t) => {
+  return process(t, 'loop_inline')
+})
