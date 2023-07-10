@@ -35,6 +35,10 @@ test('Basic', (t) => {
   return process(t, 'script-locals')
 })
 
+test('Global Locals - using require', (t) => {
+  return process(t, 'script-locals-require', { requirePath: __dirname })
+})
+
 test('Global Locals - setting global locals', (t) => {
   return process(t, 'script-locals-global', { locals: { displayAge: true } })
 })

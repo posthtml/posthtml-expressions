@@ -57,5 +57,10 @@
     "url": "https://github.com/posthtml/posthtml-expressions/issues"
   },
   "homepage": "https://github.com/posthtml/posthtml-expressions",
-  "license": "MIT"
+  "license": "MIT",
+  "ava": {
+		"files": [
+			"!test/locals/**"
+		]
+  }
 }
