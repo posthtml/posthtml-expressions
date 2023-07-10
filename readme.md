@@ -47,8 +47,9 @@ You have full control over the delimiters used for injecting locals, as well as 
 | **loopTags** | `['each']` | Array containing names for `for` loops |
 | **scopeTags** | `['scope']` | Array containing names for scopes |
 | [**ignoredTag**](#ignored-tag) | `'raw'` | String containing name of tag inside which parsing is disabled |
-| **strictMode** | `true` | Boolean value set to `false` will not throw an exception if a value in locals not found or expression could not be evaluated|
+| **strictMode** | `true` | Boolean value set to `false` will not throw an exception if a value in locals not found or when a expression or locals script could not be evaluated|
 | [**missingLocal**](#missing-locals) | `undefined` | string defining the replacement value in case value not found in locals. May contain `{expression}` placeholder|
+| [**requirePath**](#requirePath) | `undefined` | string containing the base path for require() calls inside script locals tag. Defaults to process.cwd() |
 
 ### Locals
 
@@ -169,6 +170,26 @@ In this case, your code would render as html:
 
 ```html
 <p>The fox said, <strong>wow!<strong></p>
+```
+
+### Require path
+
+When using `<script locals>` tags, you may want to import code with `require()`. As posthtml does not have access to the base path of the html file, we cannot use the true local paths to resolve imports. You can use `requirePath` to change the base path of all imports. Defaults to `process.cwd()`
+
+```html
+<!-- pages/index.html -->
+<script locals>
+  module.exports = require('locals/index.js')
+</script>
+
+<div>{{ name }}</div>
+```
+
+```js
+// locals/index.js
+module.exports = {
+  name: 'Arthur'
+}
 ```
 
 ### Expressions
