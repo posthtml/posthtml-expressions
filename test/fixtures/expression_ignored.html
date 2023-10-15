@@ -1,8 +1,8 @@
 @{{ foo }}
-<p data-username="@{{ user.name }}" data-user-id="user-@{{ user.id }}-{{ foo }}-@{{ foo }}">
+<p data-username="@{{ user.name }}" data-user-id="user-@{{ user.id }}-{{ foo }}-@{{ bar }}">
   Here's one @{{ variable }} and here's @{{ another }}. And some {{ foo }}.
 </p>
 
-ignored: @{{ foo }}
-ignoredUnescaped: @{{{ foo }}}
+ignored: @{{ leaveAsIs }}
+ignoredUnescaped: @{{{ leaveAsIs }}}
 rendered: {{ foo }}
