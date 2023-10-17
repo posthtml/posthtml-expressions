@@ -1,3 +1,13 @@
+## [1.11.2](https://github.com/posthtml/posthtml-expressions/compare/v1.11.1...v1.11.2) (2023-10-17)
+
+
+### Bug Fixes
+
+* inline expression ignore regex ([aa83033](https://github.com/posthtml/posthtml-expressions/commit/aa8303315136652b0b07db228d0406b18fd1f79a))
+* use first char of unescapedDelimiters ([48337fc](https://github.com/posthtml/posthtml-expressions/commit/48337fc710aab87880a7ed1dacfd69d70c997a2c))
+
+
+
 ## [1.11.1](https://github.com/posthtml/posthtml-expressions/compare/v1.11.0...v1.11.1) (2023-06-03)
 
 
