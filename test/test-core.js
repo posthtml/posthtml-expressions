@@ -74,6 +74,14 @@ test('Expressions - ignored', (t) => {
   return process(t, 'expression_ignored', { locals: { foo: 'bar' } })
 })
 
+test('Expressions with custom delimiters - ignored', (t) => {
+  return process(t, 'expression_custom_delimiters_ignored', {
+    delimiters: ['${', '}'],
+    unescapeDelimiters: ['${{', '}}'],
+    locals: { foo: 'bar' }
+  })
+})
+
 test('Raw output', (t) => {
   return process(t, 'raw', { locals: { foo: 'bar' } })
 })
