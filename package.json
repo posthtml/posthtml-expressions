@@ -6,6 +6,10 @@
     "node": ">=10"
   },
   "main": "lib",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "lint": "standard",
     "test": "npm run lint && nyc ava --timeout=1m",
@@ -27,9 +31,6 @@
     "standard": "^16.0.3",
     "standard-changelog": "^2.0.27"
   },
-  "files": [
-    "lib"
-  ],
   "keywords": [
     "expressions",
     "posthtml",
